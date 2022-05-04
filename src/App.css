@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+  --neon-yellow: #FFFF33
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+  width: 50%;
+  
+}
+
+.game-title {
+  color: var(--neon-yellow);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: 8em;
+  text-decoration: solid;
+  align-items: flex-end;
+}
+
+.deck, .of {
+  padding-right: 20%;
+}
+
+.life {
+padding-right: 3%;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(90deg, #00072D, 10vw, black, black);
+  font-family: 'Orbitron', sans-serif;
+  width: 100vw;
+}
+
+.home-header {
+  height: 100vh;
+}
+
+.homepage-cards {
+  width: 40%;
+  height: 100%;
+}
+
+.home-content-container {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin: 5% 0 2% 0;
+}
+
+
+.title-img-container {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.yellow-neon {
+  color: var(--neon-yellow);
+}
+
+.home-register-btns {
+  width: 100%;
+  height: 10%;
+  padding-left: 15%;
+}
+
+.init-btns {
+  margin-right: 5%;
+  width: 10%;
+  height: 60%;
+  background-color: var(--neon-yellow);
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10%;
+}
+
+.init-btns:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid var(--neon-yellow);
+  color: var(--neon-yellow);
+}
+
+.req-access:hover {
+  background-color: var(--neon-yellow);
+  color: black;
+}
+
+.req-access {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--neon-yellow);
+  border: 1px solid var(--neon-yellow);
+}
+
+.landingNav {
+  height: 10%;
+  width: 100vw;
+  display: flex;
+}
+
+.logo {
+  width: 25%;
+  color: var(--neon-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item:hover{
+  cursor: pointer;
+}
+
+.landing-nav-menu {
+  display: flex;
   color: white;
+  align-items: center;
+  width: 75%;
+  justify-content: flex-end;
+  padding-right: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-item {
+  margin: 0 5%;
+  font-size: 1em;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-the-game {
+  height: 100vh;
+}
+
+.display-flex-jc-center {
+  display: flex;
+  justify-content: center;
+}
+
+.about-title {
+  margin-top: 3%;
+}
+
+.hideLink {
+  text-decoration: none;
+  color: white;
+  width: 15%;
+  text-align: center;
 }
