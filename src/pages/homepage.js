@@ -1,4 +1,5 @@
 import LandingNav from "../components/landingnav"
+import AboutComponent from "../components/aboutcomponent"
 
 const HomePage = () => {
     return(
@@ -22,9 +23,7 @@ const HomePage = () => {
             </div>
 
             <div className="about-the-game" id='About'>
-                <div className="header-abt display-flex-jc-center">
-                    <h1 className="yellow-neon about-title">What is The Deck Of Life?</h1>
-                </div>
+                <AboutComponent></AboutComponent>
             </div>
         </div>
     )

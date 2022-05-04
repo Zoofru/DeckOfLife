@@ -6,6 +6,15 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* hide scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -39,13 +48,17 @@ padding-right: 3%;
 .home {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(90deg, #00072D, 10vw, black, black);
+  background-color: black;
   font-family: 'Orbitron', sans-serif;
   width: 100vw;
 }
 
+.hidden {
+  display: none;
+}
+
 .home-header {
-  height: 100vh;
+  height: 100vh;  background-image: linear-gradient(90deg, #00072D, 10vw, black, black);
 }
 
 .homepage-cards {
@@ -58,7 +71,7 @@ padding-right: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5% 0 2% 0;
+  margin: 4% 0 2% 0;
 }
 
 
@@ -154,7 +167,7 @@ padding-right: 3%;
 }
 
 .about-title {
-  margin-top: 3%;
+  margin-top: 2vh;
 }
 
 .hideLink {
@@ -162,4 +175,62 @@ padding-right: 3%;
   color: white;
   width: 15%;
   text-align: center;
+}
+
+.about-sections {
+  width: 100vw;
+  display: flex;
+}
+
+.container-club, .container-diamond, .container-spade, .container-heart {
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.info {
+  color: green;
+  height: 30%;
+  width: 20%;
+  position: absolute;
+  margin-right: 2.5%;
+  border-radius: 10px;
+}
+
+.info-title {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+
+.club-info {
+  background-color: var(--neon-yellow);
+  
+}
+
+.spade-info {
+ background-color: #0062FF;
+}
+
+.diamond-info {
+  background-color: #FF3131;
+}
+
+.heart-info {
+  background-color: #FF0099;
+}
+
+.card-img-about {
+  width: 90%;
+}
+
+.diamond {
+  width: 88%;
+}
+
+.spade {
+  width: 87%;
 }
