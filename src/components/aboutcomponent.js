@@ -3,30 +3,70 @@ import { useEffect } from "react"
 
 const AboutComponent = () => {
 
-    // KNOWN ISSUE IF YOU HOVER OVER MOVING DIVS, AS SOON AS THE CURSOR IS OUT OF THE DIVS BOUNDS
-    // THE DIV WILL ATTEMPT TO RETURN TO ITS ORIGINAL POSITION. EXCEPT YOUR CURSOR MIGHT BE THERE
-    // CAUSING THIS GROSS UP AND DOWN BOUNCING.
+    // -- possible issues --
+    // -> moving to fast horizontally divs may get stuck open.
+    // -> current way is simply pushing the div into the two sections above and below about
+    
     useEffect(() => {
         let upMovingContainer = document.querySelectorAll('.up')
         let downMovingContainer = document.querySelectorAll('.down')
-        
+        let clubInfo = document.querySelector('.section-club-info')
+        let spadeInfo = document.querySelector('.section-spade-info')
+        let diamondInfo = document.querySelector('.section-diamond-info')
+        let heartInfo = document.querySelector('.section-heart-info')
+
         //upward moving containers
         upMovingContainer.forEach((parent, index) => {
+            
+            // send div up
             parent.addEventListener('mouseenter', () => {
                 anime({
                     targets: parent,
-                    translateY: -400,
+                    translateY: -1200,
                     opacity: [1, 0]
                 })
             })
-    
-            parent.addEventListener('mouseleave', () => {
-                anime({
-                    targets: parent,
-                    translateY: 0,
-                    opacity: [0, 1]
+
+            // once div is hovered over, send it off screen and hand control over 
+            // to info div to control when it comes down.
+
+            // CLUBS
+            if(parent.classList.contains('container-club')) {
+                clubInfo.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: parent,
+                        translateY: -1200,
+                        opacity: [1, 0]
+                    })
                 })
-            })
+        
+                clubInfo.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 0,
+                        opacity: [0, 1]
+                    })
+                })
+            }
+            
+            // SPADES
+            if(parent.classList.contains('container-spade')) {
+                spadeInfo.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: parent,
+                        translateY: -1200,
+                        opacity: [1, 0]
+                    })
+                })
+        
+                spadeInfo.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 0,
+                        opacity: [0, 1]
+                    })
+                })
+            }
         })
 
         // downward moving containers
@@ -34,18 +74,48 @@ const AboutComponent = () => {
             parent.addEventListener('mouseenter', () => {
                 anime({
                     targets: parent,
-                    translateY: 400,
+                    translateY: 1200,
                     opacity: [1, 0]
                 })
             })
-    
-            parent.addEventListener('mouseleave', () => {
-                anime({
-                    targets: parent,
-                    translateY: 0,
-                    opacity: [0, 1]
+
+            // Diamond
+            if(parent.classList.contains('container-diamond')) {
+                diamondInfo.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 1200,
+                        opacity: [1, 0]
+                    })
                 })
-            })
+        
+                diamondInfo.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 0,
+                        opacity: [0, 1]
+                    })
+                })
+            }
+
+            //Heart
+            if(parent.classList.contains('container-heart')) {
+                heartInfo.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 1200,
+                        opacity: [1, 0]
+                    })
+                })
+        
+                heartInfo.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: parent,
+                        translateY: 0,
+                        opacity: [0, 1]
+                    })
+                })
+            }
         })
     })
 
