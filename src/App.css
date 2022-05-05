@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 :root {
-  --neon-yellow: #FFFF33
+  --neon-yellow: #FFFF33;
+  --neon-red: #FF3131;
+  --neon-blue: #0062FF;
+  --neon-pink: #FF0099;
 }
 
 html {
@@ -182,6 +185,35 @@ padding-right: 3%;
   display: flex;
 }
 
+.underlay {
+  position: absolute;
+  width: 100%;
+  display: flex;
+}
+
+.underlay-section {
+  width: 25%;
+  height: 100vh;
+  z-index: 1;
+  color: white;
+}
+
+.section-club-info {
+  background-color: var(--neon-yellow);
+}
+
+.section-diamond-info {
+  background-color: var(--neon-red);
+}
+
+.section-spade-info {
+  background-color: var(--neon-blue);
+}
+
+.section-heart-info {
+  background-color: var(--neon-pink);
+}
+
 .container-club, .container-diamond, .container-spade, .container-heart {
   width: 25%;
   height: 100vh;
@@ -189,6 +221,7 @@ padding-right: 3%;
   justify-content: center;
   align-items: center;
   background-color: black;
+  z-index: 2;
 }
 
 .info {
@@ -212,15 +245,20 @@ padding-right: 3%;
 }
 
 .spade-info {
- background-color: #0062FF;
+ background-color: var(--neon-blue);
 }
 
 .diamond-info {
-  background-color: #FF3131;
+  background-color: var(--neon-red);
 }
 
 .heart-info {
-  background-color: #FF0099;
+  background-color: var(--neon-pink);
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
 }
 
 .card-img-about {
