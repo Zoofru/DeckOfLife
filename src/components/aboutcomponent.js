@@ -123,26 +123,26 @@ const AboutComponent = () => {
         <div>
             <div className="underlay">
                 <div className="section-club-info underlay-section">
-                    <div className="info club-info hidden">
-                        <h1 className="info-title">Club Title</h1>
+                    <div className="info club-info">
+                        <h1 className="info-title">Thrill</h1>
                     </div>
                 </div>
 
                 <div className="section-diamond-info underlay-section">
                     <div className="info diamond-info hidden">
-                        <h1 className="info-title">Diamond Title</h1>
+                        <h1 className="info-title">Challenges</h1>
                     </div>
                 </div>
 
                 <div className="section-spade-info underlay-section">
                     <div className="info spade-info hidden">
-                        <h1 className="info-title">Spade title</h1>
+                        <h1 className="info-title">Ranks</h1>
                     </div>
                 </div>
 
                 <div className="section-heart-info underlay-section">
                     <div className="info heart-info hidden">
-                        <h1 className="info-title">Heart Title</h1>
+                        <h1 className="info-title">Compete</h1>
                     </div>
                 </div>
             </div>

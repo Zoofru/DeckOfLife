@@ -1,5 +1,5 @@
 const LandingNav = props => {
-    const menuItems = ['About The Game', 'Login', 'Contact Us']
+    const menuItems = ['About The Game', 'Login', 'News']
 
     const displayMenu = menuItems.map((item, index) => {
         let itemSplitAtSpace = item.split(' ')
