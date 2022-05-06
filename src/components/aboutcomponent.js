@@ -125,24 +125,43 @@ const AboutComponent = () => {
                 <div className="section-club-info underlay-section">
                     <div className="info club-info">
                         <h1 className="info-title">Thrill</h1>
+                        <p className="info-p">
+                            Participate in games of the mind, of emotion, of strength, and of cooperation.
+                            Use your ruleset to succeed in games and achieve the card that corresponds with its difficulty and suit.
+                        </p>
                     </div>
                 </div>
 
                 <div className="section-diamond-info underlay-section">
-                    <div className="info diamond-info hidden">
+                    <div className="info diamond-info">
                         <h1 className="info-title">Challenges</h1>
+                        <p className="info-p">
+                            Participate in games of varying difficulty increasing from 2 to an ace.
+                            With a ruleset changing with each suit, you will seldom find two Challenges of the same premise.
+                            Can you acheive the full deck?
+                        </p>
                     </div>
                 </div>
 
                 <div className="section-spade-info underlay-section">
-                    <div className="info spade-info hidden">
+                    <div className="info spade-info">
                         <h1 className="info-title">Ranks</h1>
+                        <p className="info-p">
+                            Complete challenges and climb the ranks. Become the top card carrier, and show everyone 
+                            theres nothing you dont have the balls for.
+                        </p>
                     </div>
                 </div>
 
                 <div className="section-heart-info underlay-section">
-                    <div className="info heart-info hidden">
+                    <div className="info heart-info">
                         <h1 className="info-title">Compete</h1>
+                        <p className="info-p">
+                            Think you have bigger balls than another card chaser? Put your cards on the line and prove it.
+                            Compete against other card chasers to acquire the the illusive Jacks, Queens, Kings, and Aces.
+                            required to complete all decks.
+                        </p>
+
                     </div>
                 </div>
             </div>

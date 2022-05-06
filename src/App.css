@@ -232,7 +232,7 @@ padding-right: 3%;
 
 .info {
   color: green;
-  height: 30%;
+  height: 100%;
   width: 25%;
   position: absolute;
   margin-right: 2.5%;
@@ -280,4 +280,12 @@ padding-right: 3%;
 
 .spade {
   width: 87%;
+}
+
+.info-p {
+  color: white;
+  padding:  5% 5%;
+  font-size: 1.7rem;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
 }
