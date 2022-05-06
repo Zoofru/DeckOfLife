@@ -1,5 +1,6 @@
 import LandingNav from "../components/landingnav"
 import AboutComponent from "../components/aboutcomponent"
+import Updates from "../components/updates"
 
 const HomePage = () => {
     return(
@@ -29,6 +30,10 @@ const HomePage = () => {
 
             <div className="about-the-game" id='About'>
                 <AboutComponent></AboutComponent>
+            </div>
+            
+            <div className="updates-news">
+                <Updates></Updates>
             </div>
         </div>
     )
