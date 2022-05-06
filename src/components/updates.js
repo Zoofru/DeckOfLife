@@ -8,7 +8,7 @@ const updates = props => {
         <div className="updates">
             <CreateUpdate
                 img="https://i.imgur.com/toVsGAx.png" 
-                title="Well, Hello There!"
+                title="Why, Hello There!"
                 desc={mayFourthDesc}
                 date='May 4th, 2022'
             ></CreateUpdate>

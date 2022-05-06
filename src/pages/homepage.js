@@ -1,8 +1,35 @@
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 import LandingNav from "../components/landingnav"
 import AboutComponent from "../components/aboutcomponent"
 import Updates from "../components/updates"
 
 const HomePage = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const handleModalOpen = () => setModalOpen(true);
+    const handleModalClose = () => setModalOpen(false);
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'black',
+        border: '2px solid #000',
+        boxShadow: 24,
+        color: "#FFFF33",
+        p: 4,
+      };
+
+    const handleInitReqSubmit = async () => {
+
+    }
+
     return(
         <div className='home'>
             <video autoPlay muted loop id='homepage-stars'>
@@ -15,16 +42,12 @@ const HomePage = () => {
                     <div className='title-img-container'>
                         <div className='title'>
                             <h1 className="game-title">Deck Of Life</h1>
-                            {/* <h1 className='game-title deck'>DECK</h1> 
-                            <h1 className='game-title of'>OF</h1>
-                            <h1 className='game-title life'>LIFE</h1> */}
                         </div>
-                        {/* <img className='homepage-cards' src='https://i.imgur.com/2s5Xh9x.jpg' alt='cards'/> */}
                     </div>
                 </div>
                 <div className='home-register-btns'>
                     <button className='init-btns'>Initialize Code</button>
-                    <button className='init-btns req-access'>Request Access</button>
+                    <button className='init-btns req-access' onClick={handleModalOpen}>Request Access</button>
                 </div>
             </div>
 
@@ -32,9 +55,47 @@ const HomePage = () => {
                 <AboutComponent></AboutComponent>
             </div>
             
-            <div className="updates-news">
+            <div className="updates-news" id='News'>
                 <Updates></Updates>
             </div>
+
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={modalOpen}
+                onClose={handleModalClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                timeout: 500,
+                }}
+            >
+                <Fade in={modalOpen}>
+                <Box sx={style}>
+                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                        <h1 className='modal-title font'>Request Access</h1>
+                    </Typography>
+
+                    <div className='display-flex-jc-center'>
+                        <div className='divider'></div>
+                    </div>
+
+                    <Typography id="transition-modal-description" className='modal-desc-layout' sx={{ mt: 2 }}>
+                        <p className='font modal-desc'>
+                            <span className='small'>Each current user has access to a code, if you know someone who is already initiated, ask them for theirs.</span>
+                            <br/><br/>
+                            To request access to Deck Of Life simply enter your email below.
+
+                        </p>
+                        <form className='init-req-form' onSubmit={handleInitReqSubmit}>
+                            <input className='input-email-req font' type='email' autocomplete='off' placeholder='->'></input>
+                            <button className='init-req-form-btn font' type='submit'>Request</button>
+                        </form>
+                    </Typography>
+                </Box>
+                </Fade>
+            </Modal>
+
         </div>
     )
 }
