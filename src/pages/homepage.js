@@ -9,9 +9,13 @@ import AboutComponent from "../components/aboutcomponent"
 import Updates from "../components/updates"
 
 const HomePage = () => {
-    const [modalOpen, setModalOpen] = useState(false);
-    const handleModalOpen = () => setModalOpen(true);
-    const handleModalClose = () => setModalOpen(false);
+    const [modalOpen, setModalOpen] = useState(false)
+    const [initCodeModalOpen, setInitCodeModalOpen] = useState(false)
+
+    const handleModalOpen = () => setModalOpen(true)
+    const handleModalClose = () => setModalOpen(false)
+    const handleInitCodeModalOpen = () => setInitCodeModalOpen(true)
+    const handleInitCodeModalClose = () => setInitCodeModalOpen(false)
 
     const style = {
         position: 'absolute',
@@ -26,7 +30,13 @@ const HomePage = () => {
         p: 4,
       };
 
+    // HANDLE REQUEST ACCESS
     const handleInitReqSubmit = async () => {
+
+    }
+
+    // HANDLE INITALIZE CODE
+    const handleInitCodeSubmit = async () => {
 
     }
 
@@ -46,7 +56,7 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className='home-register-btns'>
-                    <button className='init-btns'>Initialize Code</button>
+                    <button className='init-btns' onClick={handleInitCodeModalOpen}>Initialize Code</button>
                     <button className='init-btns req-access' onClick={handleModalOpen}>Request Access</button>
                 </div>
             </div>
@@ -59,6 +69,9 @@ const HomePage = () => {
                 <Updates></Updates>
             </div>
 
+            {/* MODALS */}
+
+            {/* REQUEST ACCESS MODAL */}
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -82,14 +95,53 @@ const HomePage = () => {
 
                     <Typography id="transition-modal-description" className='modal-desc-layout' sx={{ mt: 2 }}>
                         <p className='font modal-desc'>
-                            <span className='small'>Each current user has access to a code, if you know someone who is already initiated, ask them for theirs.</span>
+                            <span className='small'>Current users have access to a code, if you know someone who is already initiated, ask them for theirs.</span>
                             <br/><br/>
                             To request access to Deck Of Life simply enter your email below.
-
                         </p>
                         <form className='init-req-form' onSubmit={handleInitReqSubmit}>
                             <input className='input-email-req font' type='email' autocomplete='off' placeholder='->'></input>
                             <button className='init-req-form-btn font' type='submit'>Request</button>
+                        </form>
+                    </Typography>
+                </Box>
+                </Fade>
+            </Modal>
+
+
+            {/* initialize CODE MODAL */}
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={initCodeModalOpen}
+                onClose={handleInitCodeModalClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                timeout: 500,
+                }}
+            >
+                <Fade in={initCodeModalOpen}>
+                <Box sx={style}>
+                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                        <h1 className='modal-title font'>INITIALIZE</h1>
+                    </Typography>
+
+                    <div className='display-flex-jc-center'>
+                        <div className='divider'></div>
+                    </div>
+
+                    <Typography id="transition-modal-description" className='modal-desc-layout' sx={{ mt: 2 }}>
+                        <p className='font modal-desc'>
+                            To initialize enter your email and code below.
+                            <br />
+
+                            <span className='small'>If your code is accepted you will receive and email.</span>
+                        </p>
+                        <form className='init-req-form' onSubmit={handleInitCodeSubmit}>
+                            <input className='input-email-req font' type='email' autocomplete='off' placeholder='-> Email'></input>
+                            <input className='input-code-req font' type='text' autocomplete='off' placeholder='-> Code'></input>
+                            <button className='init-req-form-btn font' type='submit'>VERIFY</button>
                         </form>
                     </Typography>
                 </Box>
