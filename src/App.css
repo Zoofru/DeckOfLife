@@ -192,7 +192,7 @@ padding-right: 3%;
 
 .underlay {
   position: absolute;
-  width: 100%;
+  width: 100vw;
   display: flex;
 }
 
@@ -220,7 +220,7 @@ padding-right: 3%;
 }
 
 .container-club, .container-diamond, .container-spade, .container-heart {
-  width: 24.77%;
+  width: 25vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -250,6 +250,7 @@ padding-right: 3%;
 
 .club-info {
   background-color: var(--neon-yellow);
+  width: 25%;
 }
 
 .spade-info {
@@ -267,6 +268,7 @@ padding-right: 3%;
 .card-section {
   display: flex;
   justify-content: center;
+  width: 25vw;
 }
 
 .card-img-about {
@@ -525,4 +527,22 @@ padding-right: 3%;
 
 .red-neon {
   color: var(--neon-red);
+}
+
+@media only screen and (max-width: 1536px) {
+  .info-p {
+    font-size: 1.3rem;
+  }
+
+  .info-title {
+    font-size: 3rem;
+  }
+
+  .menu-item {
+    font-size: .8rem;
+  }
+
+  .init-btns {
+    padding: 0 2%;
+  }
 }
