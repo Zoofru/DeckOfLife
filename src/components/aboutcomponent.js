@@ -2,120 +2,26 @@ import anime from "animejs"
 import { useEffect } from "react"
 
 const AboutComponent = () => {
-
-    // -- possible issues --
-    // -> moving to fast horizontally divs may get stuck open.
-    // -> current way is simply pushing the div into the two sections above and below about
     
     useEffect(() => {
-        let upMovingContainer = document.querySelectorAll('.up')
-        let downMovingContainer = document.querySelectorAll('.down')
-        let clubInfo = document.querySelector('.section-club-info')
-        let spadeInfo = document.querySelector('.section-spade-info')
-        let diamondInfo = document.querySelector('.section-diamond-info')
-        let heartInfo = document.querySelector('.section-heart-info')
+        let cardCovers = document.querySelectorAll('.card-cover')
 
-        //upward moving containers
-        upMovingContainer.forEach((parent, index) => {
-            
-            // send div up
+        cardCovers.forEach((parent, index) => {
             parent.addEventListener('mouseenter', () => {
                 anime({
                     targets: parent,
-                    translateY: -1200,
-                    opacity: [1, 0]
+                    opacity: [1, 0],
+                    duration: 3000
                 })
             })
-
-            // once div is hovered over, send it off screen and hand control over 
-            // to info div to control when it comes down.
-
-            // CLUBS
-            if(parent.classList.contains('container-club')) {
-                clubInfo.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: parent,
-                        translateY: -1200,
-                        opacity: [1, 0]
-                    })
-                })
-        
-                clubInfo.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 0,
-                        opacity: [0, 1]
-                    })
-                })
-            }
-            
-            // SPADES
-            if(parent.classList.contains('container-spade')) {
-                spadeInfo.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: parent,
-                        translateY: -1200,
-                        opacity: [1, 0]
-                    })
-                })
-        
-                spadeInfo.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 0,
-                        opacity: [0, 1]
-                    })
-                })
-            }
-        })
-
-        // downward moving containers
-        downMovingContainer.forEach((parent, index) => {
-            parent.addEventListener('mouseenter', () => {
+    
+            parent.addEventListener('mouseleave', () => {
                 anime({
                     targets: parent,
-                    translateY: 1200,
-                    opacity: [1, 0]
+                    opacity: [0, 1],
+                    duration: 3000
                 })
             })
-
-            // Diamond
-            if(parent.classList.contains('container-diamond')) {
-                diamondInfo.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 1200,
-                        opacity: [1, 0]
-                    })
-                })
-        
-                diamondInfo.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 0,
-                        opacity: [0, 1]
-                    })
-                })
-            }
-
-            //Heart
-            if(parent.classList.contains('container-heart')) {
-                heartInfo.addEventListener('mouseenter', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 1200,
-                        opacity: [1, 0]
-                    })
-                })
-        
-                heartInfo.addEventListener('mouseleave', () => {
-                    anime({
-                        targets: parent,
-                        translateY: 0,
-                        opacity: [0, 1]
-                    })
-                })
-            }
         })
     })
 
@@ -167,25 +73,25 @@ const AboutComponent = () => {
             </div>
 
             <div className="about-sections">
-                <div className="container-club up">
+                <div className="container-club card-cover">
                     <div className="card-section club-section up-section">
                         <img className="card-img-about club" src='https://i.imgur.com/Cotrrou.png' alt='club-card'/>
                     </div>
                 </div>
                 
-                <div className="container-diamond down">
+                <div className="container-diamond card-cover">
                     <div className="card-section diamond-section">
                         <img className="card-img-about diamond" src='https://i.imgur.com/vePHxaB.png' alt='diamond-card'/>
                     </div>
                 </div>
                 
-                <div className="container-spade up">
+                <div className="container-spade card-cover">
                     <div className="card-section spade-section up-section">
                         <img className="card-img-about spade" src='https://i.imgur.com/nf9LPoj.png' alt='spade-card'/>
                     </div>
                 </div>
 
-                <div className="container-heart down">
+                <div className="container-heart card-cover">
                     <div className="card-section heart-section">
                         <img className="card-img-about heart" src='https://i.imgur.com/KGpBWkU.png' alt='heart-card'/> 
                     </div>
