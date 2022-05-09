@@ -416,6 +416,7 @@ padding-right: 3%;
   width: 100vw;
   height: 100vh;
   background-color: black;
+  display: flex;
   overflow-y: hidden;
 }
 
@@ -425,4 +426,55 @@ padding-right: 3%;
 
 .cyberpunk-login-img {
   width: 100%
+}
+
+.login-info {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.login-title {
+  color: var(--neon-yellow);
+  margin-bottom: 5%;
+  font-size: 6rem;
+}
+
+.login-input {
+  border: none;
+  border-bottom: 1px solid var(--neon-yellow);
+  background-color: black;
+  width: 50%;
+  margin: 6% 0;
+  color: var(--neon-yellow);
+  height: 5vh;
+  font-size: 1.3rem;
+}
+
+.login-input:focus {
+  outline: none;
+}
+
+.login-form-submit {
+  width: 30%;
+  height: 5vh;
+  background-color: black;
+  border: 1px solid var(--neon-yellow);
+  color: var(--neon-yellow);
+}
+
+.login-form-submit:hover {
+  cursor: pointer;
+  background-color: var(--neon-yellow);
+  color: black;
 }
