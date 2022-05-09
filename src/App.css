@@ -411,3 +411,18 @@ padding-right: 3%;
 .modal-title {
   text-align: center;
 }
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow-y: hidden;
+}
+
+.login-img {
+  width: 50%;
+}
+
+.cyberpunk-login-img {
+  width: 100%
+}
