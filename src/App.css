@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300&display=swap');
 
 :root {
   --neon-yellow: #FFFF33;
@@ -11,14 +11,14 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   /* hide scrollbar */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  /* -ms-overflow-style: none;  IE and Edge */
+  /* scrollbar-width: none;  Firefox */
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera
 html::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 * {
@@ -221,7 +221,7 @@ padding-right: 3%;
 }
 
 .container-club, .container-diamond, .container-spade, .container-heart {
-  width: 25%;
+  width: 24.77%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -434,20 +434,21 @@ padding-right: 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 3%;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .login-title {
   color: var(--neon-yellow);
   margin-bottom: 5%;
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .login-input {
@@ -463,18 +464,65 @@ padding-right: 3%;
 
 .login-input:focus {
   outline: none;
+  background-color: rgba(255, 255, 51, .2);
 }
 
 .login-form-submit {
-  width: 30%;
+  width: 40%;
   height: 5vh;
   background-color: black;
   border: 1px solid var(--neon-yellow);
   color: var(--neon-yellow);
+  font-size: 1.2rem;
 }
 
 .login-form-submit:hover {
   cursor: pointer;
   background-color: var(--neon-yellow);
   color: black;
+}
+
+.input-password {
+  margin-bottom: 0;
+}
+
+.forgot-password {
+  text-decoration: none;
+  margin: 0% 0% 3% 0%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--neon-blue);
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-actions-login {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.remember-me-div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.remember-text {
+  margin-left: 5%;
+  color: var(--neon-blue);
+  font-family: 'Roboto', sans-serif;
+}
+
+.remember-me-checkbox:hover {
+  outline: none;
+}
+
+.blue-neon {
+  color: var(--neon-blue);
+}
+
+.red-neon {
+  color: var(--neon-red);
 }
