@@ -542,7 +542,7 @@ padding-right: 3%;
   }
 }
 
-@media only screen and (max-width: 1536px) {
+@media only screen and (max-width: 480px) {
   .login-form {
     display: flex;
     justify-content: center;
@@ -612,6 +612,11 @@ padding-right: 3%;
     width: 25%;
   }
 
+  .about-sections {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .logo {
     padding-left: 2%;
   }
@@ -632,5 +637,94 @@ padding-right: 3%;
 
   .login-img {
     display: none;
+  }
+
+  .underlay {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .underlay-section {
+    width: 50vw;
+    height: 50vh;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .info-p {
+    font-size: .8rem;
+    width: 90%;
+    padding: 10% 0;
+  }
+
+  .info-title {
+    font-size: 2rem;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .card-cover {
+    width: 50vw;
+    height: 50vh;
+  }
+
+  .about-the-game {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-img-about {
+    width: 100%;
+  }
+
+  .card-section {
+    width: 100%;
+  }
+
+  .card-img-about {
+    width: 85%;
+  }
+
+  .updates {
+    width: 50%;
+  }
+
+  .update-date {
+    font-size: .7rem;
+  }
+
+  .update-title {
+    font-size: 1rem;
+  }
+
+  .read-update-news {
+    width: 50%;
+    height: 3vh;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: .875rem;
+  }
+
+  .updates { 
+    display: flex;
+    justify-content: center;
+  }
+
+  .update {
+    margin: 0;
+    width: 100%;
+  }
+
+  .new-update {
+    width: 100%;
+  }
+
+  .updates-news {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 3%;
   }
 }
