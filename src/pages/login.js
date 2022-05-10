@@ -30,6 +30,10 @@ const Login = () => {
                 <img className="cyberpunk-login-img" src='https://i.imgur.com/SmVP3He.jpg' alt="cyberpunk-img" />
             </div>
 
+            <div className="login-img-mobile">
+                <img className="mobile-img" src="https://i.imgur.com/KqtiLvZ.png" alt="suits" />
+            </div>
+
             <div className="login-info">
                 <h1 className="font login-title">Welcome, <br /> <span className='blue-neon'>Card Chaser</span></h1>
                 <form className="login-form" onSubmit={handleLogin}>
