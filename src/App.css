@@ -5,6 +5,7 @@
   --neon-red: #FF3131;
   --neon-blue: #0062FF;
   --neon-pink: #FF0099;
+  --charcoal: #333333;
 }
 
 html {
@@ -46,7 +47,7 @@ padding-right: 3%;
 .home {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: var(--charcoal);
   font-family: 'Orbitron', sans-serif;
   width: 100vw;
 }
@@ -114,7 +115,7 @@ padding-right: 3%;
 
 .req-access:hover {
   background-color: var(--neon-yellow);
-  color: black;
+  color: --charcoal;
 }
 
 .req-access {
@@ -216,7 +217,7 @@ padding-right: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: var(--charcoal);
   z-index: 2;
 }
 
@@ -285,7 +286,7 @@ padding-right: 3%;
 .updates-news {
   width: 100%;
   height: 100vh;
-  background-color: black;
+  background-color: var(--charcoal);
 }
 
 .update {
@@ -331,7 +332,7 @@ padding-right: 3%;
 
 .read-update-news:hover {
   cursor: pointer;
-  background-color: black;
+  background-color: var(--charcoal);
   border: 2px solid var(--neon-red);
   color: var(--neon-red);
 }
@@ -358,7 +359,7 @@ padding-right: 3%;
   width: 85%;
   height: 3.5vh;
   margin-top: 6%;
-  background-color: black;
+  background-color: var(--charcoal);
   color: var(--neon-yellow);
   padding: 1% 3%;
   font-size: large;
@@ -404,10 +405,10 @@ padding-right: 3%;
   text-align: center;
 }
 
-.login-page {
+.login-page, .signup-page {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--charcoal);
   display: flex;
   overflow-y: hidden;
 }
@@ -433,20 +434,22 @@ padding-right: 3%;
 .login-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: flex-start;
+  width: 90%;
+  align-items: center;
 }
 
 .login-title {
   color: var(--neon-yellow);
   margin-bottom: 5%;
   font-size: 4rem;
+  text-align: center;
+  width: 90%;
 }
 
 .login-input {
   border: none;
   border-bottom: 1px solid var(--neon-yellow);
-  background-color: black;
+  background-color: var(--charcoal);
   width: 50%;
   margin: 3% 0;
   color: var(--neon-yellow);
@@ -463,7 +466,7 @@ padding-right: 3%;
 .login-form-submit {
   width: 40%;
   height: 5vh;
-  background-color: black;
+  background-color: var(--charcoal);
   border: 1px solid var(--neon-yellow);
   color: var(--neon-yellow);
   font-size: 1.2rem;
@@ -472,7 +475,7 @@ padding-right: 3%;
 .login-form-submit:hover {
   cursor: pointer;
   background-color: var(--neon-yellow);
-  color: black;
+  color: var(--charcoal);
 }
 
 .input-password {
@@ -522,6 +525,88 @@ padding-right: 3%;
 
 .login-img-mobile {
   display: none;
+}
+
+.signup-img-container {
+  width: 50vw;
+}
+
+.signup-info {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-img {
+  width: 100%;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.signup-title {
+  height: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 5%;
+  color: white;
+  font-size: 4rem;
+}
+
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 60%;
+}
+
+.signup-input {
+  border: 1px solid gray;
+  background-color: var(--charcoal);
+  margin-bottom: 5%;
+  padding: 1.5% 3%;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+
+.last-input {
+  margin-bottom: 0%;
+}
+
+.signup-input:focus {
+  outline: none;
+  border: 1px solid var(--neon-blue);
+}
+
+.tos-check {
+  color: white;
+}
+
+.signup-submit {
+  height: 8%;
+  width: 20%;
+  margin-top: 5%;
+  background-color: var(--neon-blue);
+  border: 1px solid var(--neon-blue);
+  border-radius: 7px;
+  color: white;
+  font-size: 1rem;
+}
+
+.signup-submit:hover {
+  background-color: var(--charcoal);
+  cursor: pointer;
+}
+
+.tos-privacy-link {
+  text-decoration: none;
+  color: var(--neon-blue);
 }
 
 @media only screen and (max-width: 1536px) {
@@ -582,10 +667,6 @@ padding-right: 3%;
     color: gray;
   }
 
-  .login-input:focus {
-    background-color: black;
-  }
-
   .login-form-submit {
     width: 85%;
     border: 1px solid lightgray;
@@ -593,12 +674,10 @@ padding-right: 3%;
   }
 
   .login-form-submit:hover {
-    background-color: black;
     color: lightgray;
   }
 
   .login-info {
-    text-align: center;
     width: 100%;
     padding: 0;
     height: 50%;

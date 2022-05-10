@@ -26,9 +26,6 @@ const Login = () => {
 
     return(
         <div className="login-page">
-            <div className="login-img">
-                <img className="cyberpunk-login-img" src='https://i.imgur.com/SmVP3He.jpg' alt="cyberpunk-img" />
-            </div>
 
             <div className="login-img-mobile">
                 <img className="mobile-img" src="https://i.imgur.com/KqtiLvZ.png" alt="suits" />
@@ -84,6 +81,10 @@ const Login = () => {
 
                     <button className="login-form-submit font" type="submit">Sign In</button>
                 </form>
+            </div>
+
+            <div className="login-img">
+                <img className="cyberpunk-login-img" src='https://i.imgur.com/SmVP3He.jpg' alt="cyberpunk-img" />
             </div>
         </div>
     )

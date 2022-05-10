@@ -7,15 +7,13 @@ import { useState } from 'react';
 import LandingNav from "../components/landingnav"
 import AboutComponent from "../components/aboutcomponent"
 import Updates from "../components/updates"
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     const [modalOpen, setModalOpen] = useState(false)
-    const [initCodeModalOpen, setInitCodeModalOpen] = useState(false)
 
     const handleModalOpen = () => setModalOpen(true)
     const handleModalClose = () => setModalOpen(false)
-    const handleInitCodeModalOpen = () => setInitCodeModalOpen(true)
-    const handleInitCodeModalClose = () => setInitCodeModalOpen(false)
 
     const style = {
         position: 'absolute',
@@ -35,11 +33,6 @@ const HomePage = () => {
 
     }
 
-    // HANDLE INITALIZE CODE
-    const handleInitCodeSubmit = async () => {
-
-    }
-
     return(
         <div className='home'>
             <video autoPlay muted loop id='homepage-stars'>
@@ -56,7 +49,9 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div className='home-register-btns'>
-                    <button className='init-btns' onClick={handleInitCodeModalOpen}>Initialize Code</button>
+                    <Link to='/signup'>
+                        <button className='init-btns'>Initialize Code</button>
+                    </Link>
                     <button className='init-btns req-access' onClick={handleModalOpen}>Request Access</button>
                 </div>
             </div>
@@ -102,46 +97,6 @@ const HomePage = () => {
                         <form className='init-req-form' onSubmit={handleInitReqSubmit}>
                             <input className='input-email-req font' type='email' autocomplete='off' placeholder='->'></input>
                             <button className='init-req-form-btn font' type='submit'>Request</button>
-                        </form>
-                    </Typography>
-                </Box>
-                </Fade>
-            </Modal>
-
-
-            {/* initialize CODE MODAL */}
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={initCodeModalOpen}
-                onClose={handleInitCodeModalClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                timeout: 500,
-                }}
-            >
-                <Fade in={initCodeModalOpen}>
-                <Box sx={style}>
-                    <Typography id="transition-modal-title" variant="h6" component="h2">
-                        <h1 className='modal-title font'>INITIALIZE</h1>
-                    </Typography>
-
-                    <div className='display-flex-jc-center'>
-                        <div className='divider'></div>
-                    </div>
-
-                    <Typography id="transition-modal-description" className='modal-desc-layout' sx={{ mt: 2 }}>
-                        <p className='font modal-desc'>
-                            To initialize enter your email and code below.
-                            <br />
-
-                            <span className='small'>If your code is accepted you will receive and email.</span>
-                        </p>
-                        <form className='init-req-form' onSubmit={handleInitCodeSubmit}>
-                            <input className='input-email-req font' type='email' autocomplete='off' placeholder='-> Email'></input>
-                            <input className='input-code-req font' type='text' autocomplete='off' placeholder='-> Code'></input>
-                            <button className='init-req-form-btn font' type='submit'>VERIFY</button>
                         </form>
                     </Typography>
                 </Box>
