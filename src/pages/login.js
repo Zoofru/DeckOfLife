@@ -3,19 +3,31 @@ import { Link } from "react-router-dom"
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import axios from 'axios'
 
 const Login = () => {
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+    const [passwordInput, setPasswordInput] = useState('')
+    const [emailInput, setEmailInput] = useState('')
     const [rememberMeChecked, setRememberMeChecked] = useState(false)
 
     const handleLogin = async e => {
         e.preventDefault()
-        console.log(password)
-        console.log(email)
 
-        setPassword('')
-        setEmail('')
+        const formattedEmail = emailInput.toLowerCase()
+        const res = await axios.post(`${process.env.REACT_APP_API}/user/login`, {
+            email: formattedEmail,
+            password: passwordInput
+        })
+        // console.log(res)
+
+        if(res.data.user) {
+            //Store user information in user context
+            //Send user to users homepage
+        }
+
+
+        setPasswordInput('')
+        setEmailInput('')
     }
 
     const Styles = {
@@ -41,9 +53,9 @@ const Login = () => {
                         autoComplete="false" 
                         spellCheck='false' 
                         placeholder="-> Email" 
-                        value={email}
+                        value={emailInput}
                         required
-                        onChange={e => { setEmail(e.target.value) }}
+                        onChange={e => { setEmailInput(e.target.value) }}
                     />
 
                     <input 
@@ -52,9 +64,9 @@ const Login = () => {
                         autoComplete="false" 
                         spellCheck='false' 
                         placeholder="-> Password" 
-                        value={password}
+                        value={passwordInput}
                         required
-                        onChange={e => { setPassword(e.target.value) }} 
+                        onChange={e => { setPasswordInput(e.target.value) }} 
                     />
                     
                     <div className="user-actions-login">

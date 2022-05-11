@@ -7,10 +7,10 @@ import axios from 'axios'
 
 const Signup = () => {
     const [verifyTOS, setVerifyTOS] = useState(true)
-    const [usernameInput, setUsername] = useState('')
-    const [passwordInput, setPassword] = useState('')
-    const [emailInput, setEmail] = useState('')
-    const [initCodeInput, setInitCode] = useState('')
+    const [usernameInput, setUsernameInput] = useState('')
+    const [passwordInput, setPasswordInput] = useState('')
+    const [emailInput, setEmailInput] = useState('')
+    const [initCodeInput, setInitCodeInput] = useState('')
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -27,26 +27,28 @@ const Signup = () => {
             let rejoinName = splitUsername.join('').toLowerCase().split('')
             rejoinName.unshift(firstLetterUsername)
 
-            let formattedUsername = rejoinName.join('')
+            const formattedUsername = rejoinName.join('')
+            const formattedEmail = emailInput.toLowerCase()
 
             //create user
             const res = await axios.post(`${process.env.REACT_APP_API}/user/create`, {
                 username: formattedUsername,
-                email: emailInput,
+                email: formattedEmail,
                 password: passwordInput
             })
 
+
             // create new code and attach it to user
             if(res.data.user) {
-                await axios.post(`${process.env.REACT_APP_API}}/code/new`, {
+                await axios.post(`${process.env.REACT_APP_API}/code/new`, {
                     userId: res.data.user[0].id
                 })
             }
     
-            passwordInput('')
-            emailInput('')
-            usernameInput('')
-            initCodeInput('')
+            setPasswordInput('')
+            setEmailInput('')
+            setUsernameInput('')
+            setInitCodeInput('')
         } else {
             // TODO: Give user feedback about needing to read and agree to TOS
             console.log('not TOS')
@@ -71,7 +73,7 @@ const Signup = () => {
                         spellCheck='off' 
                         placeholder='Username'
                         value={usernameInput}
-                        onChange={e => { setUsername(e.target.value)}}
+                        onChange={e => { setUsernameInput(e.target.value)}}
                         required
                     />
 
@@ -82,7 +84,7 @@ const Signup = () => {
                         spellCheck='off' 
                         placeholder='Email'
                         value={emailInput}
-                        onChange={e => { setEmail(e.target.value)}}
+                        onChange={e => { setEmailInput(e.target.value)}}
                         required
                     />
 
@@ -93,7 +95,7 @@ const Signup = () => {
                         spellCheck='off' 
                         placeholder='Password'
                         value={passwordInput}
-                        onChange={e => { setPassword(e.target.value)}}
+                        onChange={e => { setPasswordInput(e.target.value)}}
                         required
                     />
 
@@ -104,7 +106,7 @@ const Signup = () => {
                         spellCheck='off' 
                         placeholder='Initialization Code'
                         value={initCodeInput}
-                        onChange={e => { setInitCode(e.target.value)}}
+                        onChange={e => { setInitCodeInput(e.target.value)}}
                         // required
                     />
 
