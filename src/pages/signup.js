@@ -15,8 +15,23 @@ const Signup = () => {
     const handleSubmit = async e => {
         e.preventDefault()
         if(verifyTOS) {
+
+            //Format username to starts with capital and continue lowercase
+            //EX: SpOnGeBoB -> Spongebob
+            let firstLetterUsername = usernameInput[0]
+            firstLetterUsername.toUpperCase()
+
+            let splitUsername = usernameInput.split('')
+            splitUsername.splice(0, 1)
+            
+            let rejoinName = splitUsername.join('').toLowerCase().split('')
+            rejoinName.unshift(firstLetterUsername)
+
+            let formattedUsername = rejoinName.join('')
+
+            //create user
             const res = await axios.post(`${process.env.REACT_APP_API}/user/create`, {
-                username: usernameInput,
+                username: formattedUsername,
                 email: emailInput,
                 password: passwordInput
             })
@@ -34,7 +49,7 @@ const Signup = () => {
             initCodeInput('')
         } else {
             // TODO: Give user feedback about needing to read and agree to TOS
-            console.log('not TOs')
+            console.log('not TOS')
         }
     }
 
