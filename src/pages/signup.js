@@ -6,7 +6,7 @@ import { useState } from 'react';
 import axios from 'axios'
 
 const Signup = () => {
-    const [verifyTOS, setVerifyTOS] = useState(false)
+    const [verifyTOS, setVerifyTOS] = useState(true)
     const [usernameInput, setUsername] = useState('')
     const [passwordInput, setPassword] = useState('')
     const [emailInput, setEmail] = useState('')
@@ -15,15 +15,15 @@ const Signup = () => {
     const handleSubmit = async e => {
         e.preventDefault()
         if(verifyTOS) {
-            const res = await axios.post('http://localhost:3001/user/create', {
+            const res = await axios.post(`${process.env.REACT_APP_API}/user/create`, {
                 username: usernameInput,
                 email: emailInput,
                 password: passwordInput
             })
-    
-            //create new code and attach it to user
+
+            // create new code and attach it to user
             if(res.data.user) {
-                await axios.post('http://localhost:3001/code/new', {
+                await axios.post(`${process.env.REACT_APP_API}}/code/new`, {
                     userId: res.data.user[0].id
                 })
             }
@@ -34,6 +34,7 @@ const Signup = () => {
             initCodeInput('')
         } else {
             // TODO: Give user feedback about needing to read and agree to TOS
+            console.log('not TOs')
         }
     }
 
