@@ -3,12 +3,15 @@ import { Link } from "react-router-dom"
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 const Login = () => {
     const [passwordInput, setPasswordInput] = useState('')
     const [emailInput, setEmailInput] = useState('')
     const [rememberMeChecked, setRememberMeChecked] = useState(false)
+    const navigate = useNavigate()
+
 
     const handleLogin = async e => {
         e.preventDefault()
@@ -23,6 +26,7 @@ const Login = () => {
         if(res.data.user) {
             //Store user information in user context
             //Send user to users homepage
+            navigate('/home')
         }
 
 
