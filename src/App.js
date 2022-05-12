@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { UserContext } from './context/usercontext';
+import { useEffect, useState } from 'react';
+import axios from 'axios'
 import HomePage from './pages/homepage';
 import './App.css';
 import Login from './pages/login'
@@ -6,45 +9,64 @@ import Signup from './pages/signup';
 import Home from './pages/home';
 
 function App() {
+  const [user, setUser] = useState(null)
+    
+  useEffect(() => {
+    //If user refreshes page, make a call to set user context again
+    const refreshUser = async () => {
+      if(localStorage.getItem('UAT')) {
+        const res = await axios.get(`${process.env.REACT_APP_API}/retrieve`, {
+          headers: {
+            'Authorization' : `${localStorage.getItem('UAT')}`
+          }
+        })
+        setUser(res.data.user)
+      }
+    }
+    
+    refreshUser()
+  }, [])
+
   return (
     <div>
-      <BrowserRouter>
-      
-        <Routes>
-          <Route
-            exact
-            path='/'
-            element={
-              <HomePage></HomePage>
-            }
-          />
+      <UserContext.Provider value={{user, setUser}}>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              exact
+              path='/'
+              element={
+                <HomePage></HomePage>
+              }
+            />
 
-          <Route
-            exact
-            path='/login'
-            element={
-              <Login></Login>
-            }
-          />
+            <Route
+              exact
+              path='/login'
+              element={
+                <Login></Login>
+              }
+            />
 
-          <Route
-            exact
-            path='/signup'
-            element={
-              <Signup></Signup>
-            }
-          />
+            <Route
+              exact
+              path='/signup'
+              element={
+                <Signup></Signup>
+              }
+            />
 
-          <Route
-            exact
-            path='/home'
-            element={
-              <Home></Home>
-            }
-          />
+            <Route
+              exact
+              path='/home'
+              element={
+                <Home></Home>
+              }
+            />
 
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </UserContext.Provider>
     </div>
   );
 }

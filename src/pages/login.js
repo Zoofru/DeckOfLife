@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { UserContext } from "../context/usercontext";
 import { Link } from "react-router-dom"
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -6,10 +7,13 @@ import Checkbox from '@mui/material/Checkbox';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
+
 const Login = () => {
     const [passwordInput, setPasswordInput] = useState('')
     const [emailInput, setEmailInput] = useState('')
     const [rememberMeChecked, setRememberMeChecked] = useState(false)
+
+    const { setUser } = useContext(UserContext)
     const navigate = useNavigate()
 
 
@@ -25,7 +29,8 @@ const Login = () => {
 
         if(res.data.user) {
             //Store user information in user context
-            //Send user to users homepage
+            localStorage.setItem('UAT', res.data.acessToken)
+            setUser(res.data.user)
             navigate('/home')
         }
 
