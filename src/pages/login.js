@@ -21,7 +21,7 @@ const Login = () => {
             email: formattedEmail,
             password: passwordInput
         })
-        // console.log(res)
+        console.log(res)
 
         if(res.data.user) {
             //Store user information in user context

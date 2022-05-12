@@ -3,6 +3,7 @@ import HomePage from './pages/homepage';
 import './App.css';
 import Login from './pages/login'
 import Signup from './pages/signup';
+import Home from './pages/home';
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
             path='/signup'
             element={
               <Signup></Signup>
+            }
+          />
+
+          <Route
+            exact
+            path='/home'
+            element={
+              <Home></Home>
             }
           />
 

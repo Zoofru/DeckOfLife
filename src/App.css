@@ -5,7 +5,7 @@
   --neon-red: #FF3131;
   --neon-blue: #0062FF;
   --neon-pink: #FF0099;
-  --charcoal: #333333;
+  --charcoal: #18191A;
 }
 
 html {
@@ -607,6 +607,58 @@ padding-right: 3%;
 .tos-privacy-link {
   text-decoration: none;
   color: var(--neon-blue);
+}
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--charcoal);
+}
+
+.white {
+  color: white;
+}
+
+.nav {
+  height: 100vh;
+  width: 20vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  height: 40%;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.nav-item {
+  width: 100%;
+  height: 20%;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.nav-item-text {
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100%;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item-text:hover {
+  color: var(--charcoal);
 }
 
 @media only screen and (max-width: 1536px) {
