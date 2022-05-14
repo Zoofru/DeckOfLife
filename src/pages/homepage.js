@@ -8,6 +8,7 @@ import LandingNav from "../components/landingnav"
 import AboutComponent from "../components/aboutcomponent"
 import Updates from "../components/updates"
 import { Link } from 'react-router-dom';
+import Footer from '../components/footer';
 
 const HomePage = () => {
     const [modalOpen, setModalOpen] = useState(false)
@@ -102,7 +103,7 @@ const HomePage = () => {
                 </Box>
                 </Fade>
             </Modal>
-
+            <Footer></Footer>
         </div>
     )
 }
