@@ -408,7 +408,7 @@ padding-right: 3%;
 .login-page, .signup-page {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--charcoal);
   display: flex;
   overflow-y: hidden;
 }
@@ -439,7 +439,7 @@ padding-right: 3%;
 }
 
 .login-title {
-  color: var(--neon-yellow);
+  color: white;
   margin-bottom: 5%;
   font-size: 4rem;
   text-align: center;
@@ -448,11 +448,11 @@ padding-right: 3%;
 
 .login-input {
   border: none;
-  border-bottom: 1px solid var(--neon-yellow);
-  background-color: black;
+  border-bottom: 1px solid white;
+  background-color: var(--charcoal);
   width: 50%;
   margin: 3% 0;
-  color: var(--neon-yellow);
+  color: white;
   height: 5vh;
   font-size: 1.3rem;
   padding: 0 1.5%;
@@ -460,22 +460,42 @@ padding-right: 3%;
 
 .login-input:focus {
   outline: none;
-  background-color: rgba(255, 255, 51, .2);
+  background-color: rgba(255, 255, 255, .2);
 }
 
 .login-form-submit {
   width: 40%;
   height: 5vh;
-  background-color: black;
-  border: 1px solid var(--neon-yellow);
-  color: var(--neon-yellow);
+  background-color: var(--charcoal);
+  border: 1px solid white;
+  color: white;
   font-size: 1.2rem;
 }
 
 .login-form-submit:hover {
   cursor: pointer;
-  background-color: var(--neon-yellow);
-  color: black;
+  background-color: white;
+  color: var(--charcoal);
+}
+
+.return-cont {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  color: var(--neon-blue);
+}
+
+.return-cont-signup {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  color: var(--neon-blue);
+}
+
+.back-arrow:hover {
+  cursor: pointer;
 }
 
 .input-password {
@@ -536,6 +556,9 @@ padding-right: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 75vh;
+  padding-bottom: 5%;
 }
 
 .signup-img {

@@ -5,6 +5,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useNavigate } from "react-router-dom";
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import axios from 'axios'
 
 
@@ -15,7 +16,6 @@ const Login = () => {
 
     const { setUser } = useContext(UserContext)
     const navigate = useNavigate()
-
 
     const handleLogin = async e => {
         e.preventDefault()
@@ -43,6 +43,14 @@ const Login = () => {
         checkBoxText: {
             color: '#0062FF',
         },
+        arrow: {
+            width: '10%',
+            height: '60%'
+        }
+    }
+
+    const returnToLanding = () => {
+        navigate('/')
     }
 
     return(
@@ -53,55 +61,64 @@ const Login = () => {
             </div>
 
             <div className="login-info">
-                <h1 className="font login-title">Welcome, <br /> <span className='blue-neon'>Card Chaser</span></h1>
-                <form className="login-form" onSubmit={handleLogin}>
+                <div className="return-cont">
+                    <ArrowCircleLeftOutlinedIcon 
+                        style={Styles.arrow} 
+                        className={'back-arrow'} 
+                        onClick={returnToLanding}
+                    ></ArrowCircleLeftOutlinedIcon>
+                </div>
+                <div className="login-info">
+                    <h1 className="font login-title">Welcome, <br /> <span className='blue-neon'> Card Chaser</span></h1>
+                    <form className="login-form" onSubmit={handleLogin}>
 
-                    <input 
-                        className="login-from-email-input login-input font" 
-                        type='email' 
-                        autoComplete="false" 
-                        spellCheck='false' 
-                        placeholder="-> Email" 
-                        value={emailInput}
-                        required
-                        onChange={e => { setEmailInput(e.target.value) }}
-                    />
+                        <input 
+                            className="login-from-email-input login-input font" 
+                            type='email' 
+                            autoComplete="false" 
+                            spellCheck='false' 
+                            placeholder="-> Email" 
+                            value={emailInput}
+                            required
+                            onChange={e => { setEmailInput(e.target.value) }}
+                        />
 
-                    <input 
-                        className="login-from-password-input login-input font input-password" 
-                        type='password' 
-                        autoComplete="false" 
-                        spellCheck='false' 
-                        placeholder="-> Password" 
-                        value={passwordInput}
-                        required
-                        onChange={e => { setPasswordInput(e.target.value) }} 
-                    />
-                    
-                    <div className="user-actions-login">
-                        <FormGroup>
-                            <FormControlLabel 
-                                control={
-                                    <Checkbox 
-                                        defaultChecked 
-                                        sx={{color: "#0062FF"}} 
-                                        size="small"
-                                        onChange={e => setRememberMeChecked(!rememberMeChecked) }
-                                    />
-                                } 
-                                label="Remember me" 
-                                style={Styles.checkBoxText}
-                            />
-                        </FormGroup>
+                        <input 
+                            className="login-from-password-input login-input font input-password" 
+                            type='password' 
+                            autoComplete="false" 
+                            spellCheck='false' 
+                            placeholder="-> Password" 
+                            value={passwordInput}
+                            required
+                            onChange={e => { setPasswordInput(e.target.value) }} 
+                        />
+                        
+                        <div className="user-actions-login">
+                            <FormGroup>
+                                <FormControlLabel 
+                                    control={
+                                        <Checkbox 
+                                            defaultChecked 
+                                            sx={{color: "#0062FF"}} 
+                                            size="small"
+                                            onChange={e => setRememberMeChecked(!rememberMeChecked) }
+                                        />
+                                    } 
+                                    label="Remember me" 
+                                    style={Styles.checkBoxText}
+                                />
+                            </FormGroup>
 
-                        <Link to='/forgot-password' className="forgot-password">
-                            <p>Forget password?</p>
-                        </Link>
+                            <Link to='/forgot-password' className="forgot-password">
+                                <p>Forget password?</p>
+                            </Link>
 
-                    </div>
+                        </div>
 
-                    <button className="login-form-submit font" type="submit">Sign In</button>
-                </form>
+                        <button className="login-form-submit font" type="submit">Sign In</button>
+                    </form>
+                </div>
             </div>
 
             <div className="login-img">
