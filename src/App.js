@@ -36,7 +36,7 @@ function App() {
               exact
               path='/'
               element={
-                <HomePage></HomePage>
+                !user ? <HomePage></HomePage> : <Home></Home>
               }
             />
 

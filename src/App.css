@@ -732,10 +732,24 @@ padding-right: 3%;
   width: 100%;
 }
 
+.account-username {
+  display: flex;
+  align-items: center;
+}
+
+.account-perm {
+  width: 20%;
+  margin: 0 5%;
+}
+
 .user-card-divider {
   border: 1px solid rgba(255, 255, 255, .1);
   width: 80%;
   border-radius: 50%;
+}
+
+.red {
+  color: var(--neon-red);
 }
 
 .footer {

@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom"
-import axios from 'axios'
+import { Link, useNavigate } from "react-router-dom"
+
 
 const Nav = props => {
-    
-    const logoutUser= () => {
-        console.log('logout')
-        //TODO: Handle logout
+    const navigate = useNavigate()
+
+    const logoutUser = () => {
+        localStorage.removeItem('UAT')
+        navigate('/')
     }
 
     const navItems = ["Home", "Play", "Profile", "Settings", "Logout"]

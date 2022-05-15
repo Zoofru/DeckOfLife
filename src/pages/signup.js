@@ -40,12 +40,16 @@ const Signup = () => {
                 password: passwordInput
             })
 
+            console.log(res)
+
 
             // create new code and attach it to user
             if(res.data.user) {
                 await axios.post(`${process.env.REACT_APP_API}/code/new`, {
                     userId: res.data.user[0].id
                 })
+
+                navigate('/login')
             }
     
             setPasswordInput('')

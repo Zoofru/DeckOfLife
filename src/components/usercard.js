@@ -4,7 +4,6 @@ import { UserContext } from '../context/usercontext'
 const UserCard = props => {
     const { user } = useContext(UserContext)
 
-    console.log(user)
     return(
         <div className="user-card">
             {user !== null ? 
@@ -14,8 +13,15 @@ const UserCard = props => {
                     </div>
 
                     <div className="account-username">
-                        <p className="font-roboto white user-card-username">{user.username}</p>
-                    </div>
+                        {user.isStaff ? 
+                            <>
+                                <img className='account-perm' src='https://i.imgur.com/6P1CHsh.png' alt='account-rank'/>
+                                <p className="font-roboto white user-card-username red">{user.username}</p>
+                            </>
+                        : 
+                            <p className="font-roboto white user-card-username">{user.username}</p>
+                        }               
+                        </div>
                 </div>
             :
                 <></>    
