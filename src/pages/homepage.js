@@ -31,7 +31,7 @@ const HomePage = () => {
 
     // HANDLE REQUEST ACCESS
     const handleInitReqSubmit = async () => {
-
+        //TODO
     }
 
     return(
