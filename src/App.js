@@ -3,7 +3,7 @@ import { UserContext } from './context/usercontext';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import HomePage from './pages/homepage';
-import './App.css';
+import './App.scss';
 import Login from './pages/login'
 import Signup from './pages/signup';
 import Home from './pages/home';

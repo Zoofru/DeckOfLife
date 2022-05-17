@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300&display=swap');
 
-:root {
-  --neon-yellow: #FFFF33;
-  --neon-red: #FF3131;
-  --neon-blue: #0062FF;
-  --neon-pink: #FF0099;
-  --charcoal: #18191A;
-}
+$neon-yellow: #FFFF33;
+$neon-red: #FF3131;
+$neon-blue: #0062FF;
+$neon-pink: #FF0099;
+$charcoal: #18191A;
 
 html {
   overflow-x: hidden;
@@ -27,7 +25,7 @@ html {
 }
 
 .game-title {
-  color: var(--neon-yellow);
+  color: $neon-yellow;
   display: flex;
   flex-direction: column;
   font-size: 8em;
@@ -41,7 +39,7 @@ html {
 }
 
 .life {
-padding-right: 3%;
+  padding-right: 3%;
 }
 
 .home {
@@ -83,7 +81,7 @@ padding-right: 3%;
 }
 
 .yellow-neon {
-  color: var(--neon-yellow);
+  color: $neon-yellow;
 }
 
 .home-register-btns {
@@ -96,7 +94,7 @@ padding-right: 3%;
   margin-right: 5%;
   width: 10%;
   height: 60%;
-  background-color: var(--neon-yellow);
+  background-color: $neon-yellow;
   border: none;
   position: relative;
   border-radius: 10px;
@@ -109,19 +107,19 @@ padding-right: 3%;
 .init-btns:hover {
   cursor: pointer;
   background-color: black;
-  border: 1px solid var(--neon-yellow);
-  color: var(--neon-yellow);
+  border: 1px solid $neon-yellow;
+  color: $neon-yellow;
 }
 
 .req-access:hover {
-  background-color: var(--neon-yellow);
+  background-color: $neon-yellow;
   color: --charcoal;
 }
 
 .req-access {
   background-color: rgba(0, 0, 0, 0);
-  color: var(--neon-yellow);
-  border: 1px solid var(--neon-yellow);
+  color: $neon-yellow;
+  border: 1px solid $neon-yellow;
 }
 
 .landingNav {
@@ -132,7 +130,7 @@ padding-right: 3%;
 
 .logo {
   width: 25%;
-  color: var(--neon-yellow);
+  color: $neon-yellow;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,19 +195,19 @@ padding-right: 3%;
 }
 
 .section-club-info {
-  background-color: var(--neon-yellow);
+  background-color: $neon-yellow;
 }
 
 .section-diamond-info {
-  background-color: var(--neon-red);
+  background-color: $neon-red;
 }
 
 .section-spade-info {
-  background-color: var(--neon-blue);
+  background-color: $neon-blue;
 }
 
 .section-heart-info {
-  background-color: var(--neon-pink);
+  background-color: $neon-pink;
 }
 
 .container-club, .container-diamond, .container-spade, .container-heart {
@@ -218,7 +216,7 @@ padding-right: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
   z-index: 2;
 }
 
@@ -242,20 +240,20 @@ padding-right: 3%;
 }
 
 .club-info {
-  background-color: var(--neon-yellow);
+  background-color: $neon-yellow;
   width: 25%;
 }
 
 .spade-info {
- background-color: var(--neon-blue);
+ background-color: $neon-blue;
 }
 
 .diamond-info {
-  background-color: var(--neon-red);
+  background-color: $neon-red;
 }
 
 .heart-info {
-  background-color: var(--neon-pink);
+  background-color: $neon-pink;
 }
 
 .card-section {
@@ -287,7 +285,7 @@ padding-right: 3%;
 .updates-news {
   width: 100%;
   height: 100vh;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
 }
 
 .update {
@@ -326,7 +324,7 @@ padding-right: 3%;
   width: 30%;
   border-radius: 15px;
   border: none;
-  background-color: var(--neon-red);
+  background-color: $neon-red;
   color: white;
   font-size: .875rem;
 }
@@ -334,8 +332,8 @@ padding-right: 3%;
 .read-update-news:hover {
   cursor: pointer;
   background-color: black;
-  border: 2px solid var(--neon-red);
-  color: var(--neon-red);
+  border: 2px solid $neon-red;
+  color: $neon-red;
 }
 
 .font {
@@ -343,7 +341,7 @@ padding-right: 3%;
 }
 
 .divider {
-  border: 1px solid var(--neon-yellow);
+  border: 1px solid $neon-yellow;
   width: 50%;
   margin: 5% 0;
 }
@@ -361,11 +359,11 @@ padding-right: 3%;
   height: 3.5vh;
   margin-top: 6%;
   background-color: black;
-  color: var(--neon-yellow);
+  color: $neon-yellow;
   padding: 1% 3%;
   font-size: large;
   border: none;
-  border-bottom: 1px solid var(--neon-yellow);
+  border-bottom: 1px solid $neon-yellow;
 }
 
 .input-email-req:focus, .input-code-req:focus {
@@ -385,14 +383,14 @@ padding-right: 3%;
   width: 30%;
   height: 3.5vh;
   background-color: black;
-  border: 1px solid var(--neon-yellow);
+  border: 1px solid $neon-yellow;
   border-radius: 5px;
-  color: var(--neon-yellow);
+  color: $neon-yellow;
 }
 
 .init-req-form-btn:hover {
   cursor: pointer;
-  background-color: var(--neon-yellow);
+  background-color: $neon-yellow;
   color: black;
 }
 
@@ -409,7 +407,7 @@ padding-right: 3%;
 .login-page, .signup-page {
   width: 100vw;
   height: 100vh;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
   display: flex;
   overflow-y: hidden;
 }
@@ -450,7 +448,7 @@ padding-right: 3%;
 .login-input {
   border: none;
   border-bottom: 1px solid white;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
   width: 50%;
   margin: 3% 0;
   color: white;
@@ -467,7 +465,7 @@ padding-right: 3%;
 .login-form-submit {
   width: 40%;
   height: 5vh;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
   border: 1px solid white;
   color: white;
   font-size: 1.2rem;
@@ -476,7 +474,7 @@ padding-right: 3%;
 .login-form-submit:hover {
   cursor: pointer;
   background-color: white;
-  color: var(--charcoal);
+  color: $charcoal;
 }
 
 .return-cont {
@@ -484,7 +482,7 @@ padding-right: 3%;
   height: 10%;
   display: flex;
   align-items: center;
-  color: var(--neon-blue);
+  color: $neon-blue;
 }
 
 .return-cont-signup {
@@ -492,7 +490,7 @@ padding-right: 3%;
   height: 7vh;
   display: flex;
   align-items: center;
-  color: var(--neon-blue);
+  color: $neon-blue;
 }
 
 .back-arrow:hover {
@@ -509,7 +507,7 @@ padding-right: 3%;
   height: 100%;
   display: flex;
   align-items: center;
-  color: var(--neon-blue);
+  color: $neon-blue;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -528,7 +526,7 @@ padding-right: 3%;
 
 .remember-text {
   margin-left: 5%;
-  color: var(--neon-blue);
+  color: $neon-blue;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -537,11 +535,11 @@ padding-right: 3%;
 }
 
 .blue-neon {
-  color: var(--neon-blue);
+  color: $neon-blue;
 }
 
 .red-neon {
-  color: var(--neon-red);
+  color: $neon-red;
 }
 
 .login-img-mobile {
@@ -599,13 +597,22 @@ padding-right: 3%;
   font-size: 1.2rem;
 }
 
+.input-pass {
+    margin-bottom: 0;
+}
+
+.pass-req-list {
+    padding-left: 2.5%;
+    margin-bottom: 5%;
+}
+
 .last-input {
   margin-bottom: 0%;
 }
 
 .signup-input:focus {
   outline: none;
-  border: 1px solid var(--neon-blue);
+  border: 1px solid $neon-blue;
 }
 
 .tos-check {
@@ -616,8 +623,8 @@ padding-right: 3%;
   height: 8%;
   width: 20%;
   margin-top: 5%;
-  background-color: var(--neon-blue);
-  border: 1px solid var(--neon-blue);
+  background-color: $neon-blue;
+  border: 1px solid $neon-blue;
   border-radius: 7px;
   color: white;
   font-size: 1rem;
@@ -630,13 +637,13 @@ padding-right: 3%;
 
 .tos-privacy-link {
   text-decoration: none;
-  color: var(--neon-blue);
+  color: $neon-blue;
 }
 
 .home-page {
   width: 100vw;
   height: 100vh;
-  background-color: var(--charcoal);
+  background-color: $charcoal;
   display: flex;
 }
 
@@ -683,7 +690,7 @@ padding-right: 3%;
 }
 
 .nav-item-text:hover {
-  color: var(--charcoal);
+  color: $charcoal;
 }
 
 .left-side-home {
@@ -750,7 +757,7 @@ padding-right: 3%;
 }
 
 .red {
-  color: var(--neon-red);
+  color: $neon-red;
 }
 
 .footer {
@@ -770,6 +777,13 @@ padding-right: 3%;
   flex-direction: column;
   align-items: center;
   padding: 5% 0 0 0;
+
+  
+}
+
+.tribunal-title {
+  width: 90%;
+  text-align: left;
 }
 
 .tribunal {
@@ -787,15 +801,29 @@ padding-right: 3%;
   text-align: center;
 }
 
-.tribunal-title {
-  width: 90%;
-  text-align: left;
-}
 
 .tribunal-video {
   width: 13%;
   height: 100%;
   border-right: 3px solid black;
+}
+
+// mixins
+@mixin theme($theme: red) {
+    background: $theme;
+    color: white;
+}
+
+.right-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-alert {
+    width: 40vw;
+    display: flex;
+    background-color: red;
 }
 
 @media only screen and (max-width: 1536px) {

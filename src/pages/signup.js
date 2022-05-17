@@ -2,10 +2,15 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import Alert from '@mui/material/Alert';
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 const Signup = () => {
     const [verifyTOS, setVerifyTOS] = useState(true)
@@ -13,7 +18,9 @@ const Signup = () => {
     const [passwordInput, setPasswordInput] = useState('')
     const [emailInput, setEmailInput] = useState('')
     const [initCodeInput, setInitCodeInput] = useState('')
+    const [open, setOpen] = React.useState(false);
     const navigate = useNavigate()
+    
 
     const handleSubmit = async e => {
         e.preventDefault()
@@ -40,9 +47,6 @@ const Signup = () => {
                 password: passwordInput
             })
 
-            console.log(res)
-
-
             // create new code and attach it to user
             if(res.data.user) {
                 await axios.post(`${process.env.REACT_APP_API}/code/new`, {
@@ -51,7 +55,12 @@ const Signup = () => {
 
                 navigate('/login')
             }
-    
+
+            if(res.data.status === 409) {
+                //open error alert to notify user their attempt failed.
+                setOpen(true)
+            }
+
             setPasswordInput('')
             setEmailInput('')
             setUsernameInput('')
@@ -84,7 +93,7 @@ const Signup = () => {
                 <img className="signup-img" src="https://i.imgur.com/tQwBYLd.jpg" alt="neon-city" />
             </div>
 
-            <div>
+            <div className='right-signup'>
                 <div className='return-cont'>
                     <div className="return-cont-signup">
                         <ArrowCircleLeftOutlinedIcon 
@@ -120,7 +129,7 @@ const Signup = () => {
                         />
 
                         <input 
-                            className="signup-input" 
+                            className="signup-input input-pass" 
                             type='password' 
                             autoComplete='off' 
                             spellCheck='off' 
@@ -129,6 +138,11 @@ const Signup = () => {
                             onChange={e => { setPasswordInput(e.target.value)}}
                             required
                         />
+                        <ul className='white pass-req-list'>
+                            <li>
+                                <small className='pass-req font-roboto white'>Password must have atleast 8 characters</small>
+                            </li>
+                        </ul>
 
                         <input 
                             className="signup-input last-input" 
@@ -160,6 +174,27 @@ const Signup = () => {
                         <button type='submit' className='signup-submit'>Join</button>
                     </form>
                 </div>
+                <Collapse in={open} className='kl'>
+                    <Alert 
+                        className='error-alert'
+                        severity="error"
+                        action={
+                            <IconButton
+                                aria-label="close"
+                                color="inherit"
+                                size="small"
+                                onClick={() => {
+                                    setOpen(false);
+                                }}
+                            >
+                                <CloseIcon fontSize="inherit" />
+                            </IconButton>
+                        }
+                        sx={{ mb: 4 }}
+                        >
+                        Your password may have been to short or your email is already in use!
+                    </Alert>
+                </Collapse>
             </div>
         </div>
     )
