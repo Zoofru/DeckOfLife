@@ -30,6 +30,7 @@ const Login = () => {
         if(res.data.user) {
             //Store user information in user context
             localStorage.setItem('UAT', res.data.acessToken)
+            localStorage.setItem('CUSER', res.data.user)
             setUser(res.data.user)
             navigate('/home')
         }

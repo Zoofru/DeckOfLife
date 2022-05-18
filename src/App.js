@@ -23,8 +23,13 @@ function App() {
         setUser(res.data.user)
       }
     }
+
     
-    refreshUser()
+    if(localStorage.getItem('CUSER')) {
+      setUser(localStorage.getItem('CUSER'))
+    } else {
+      refreshUser()
+    }    
   }, [])
 
   return (

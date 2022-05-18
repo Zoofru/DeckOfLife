@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import axios from "axios"
 import Nav from "../components/nav"
 import UserCard from "../components/usercard"
+import { UserContext } from "../context/usercontext"
 
 const Home = props => {
     const [proofs, setProofs] = useState([])
+    const { setUser } = useContext(UserContext)
     
     useEffect(() => {
         const retrieveProof = async numToGet => {
@@ -16,9 +18,25 @@ const Home = props => {
 
             setProofs(res.data.proofs)
         }
+
+        const refreshUser = async () => {
+            if(localStorage.getItem('UAT')) {
+                const res = await axios.get(`${process.env.REACT_APP_API}/retrieve`, {
+                    headers: {
+                        'Authorization' : `${localStorage.getItem('UAT')}`
+                    }
+                })
+                console.log(res)
+                setUser(res.data.user)
+            }
+        }
+
+        if(localStorage.getItem('UAT')) {
+            refreshUser()
+        }
         
         retrieveProof(5)
-    })
+    }, [])
 
     const displayTribunalVideos = proofs.map((proof, index) => {
         return (

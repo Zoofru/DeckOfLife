@@ -1,8 +1,26 @@
-import { useContext } from 'react'
+import axios from 'axios'
+import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/usercontext'
 
 const UserCard = props => {
     const { user } = useContext(UserContext)
+    const [userRank, setUserRank] = useState({})
+
+    useEffect(() => {
+        const getRank = async () => {
+            if(user) {
+                const res = await axios.get(`${process.env.REACT_APP_API}/rank/${user.rank}`, {
+                    headers: {
+                        'Authorization': localStorage.getItem('UAT')
+                    }
+                })
+                setUserRank(res.data.rank)
+                console.log(userRank)
+            }
+        }
+
+        getRank()
+    }, [user])
 
     return(
         <div className="user-card">
@@ -28,6 +46,22 @@ const UserCard = props => {
             }
 
             <div className="user-card-divider"></div>
+
+            {user !== null && userRank !== undefined ?
+                <div>
+                    {/* <div className='user-card-stats'>
+                        <p className='white font-roboto uc-stat'>Completed Challenges: <span className='stat'>{user.challengesComplete}</span></p>
+                        <p className='white font-roboto uc-stat'>Failed Challenges: <span className='stat'>{user.challengesComplete}</span></p>
+                    </div> */}
+
+                    <div className='rank'>
+                        <p className='font-roboto white rank-title'>{userRank.title}</p>
+                        <img className='rank-img' src={userRank.icon} alt='user rank' />
+                    </div>
+                </div>
+            :
+                <></>
+            }
 
         </div>
     )
