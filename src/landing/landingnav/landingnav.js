@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import './landingnav.scss'
 
 const LandingNav = props => {
     const menuItems = ['About The Game', 'Login', 'News']

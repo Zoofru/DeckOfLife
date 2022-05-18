@@ -1,4 +1,5 @@
 import CreateUpdate from "./createupdate"
+import './updates.scss'
 
 const updates = props => {
     

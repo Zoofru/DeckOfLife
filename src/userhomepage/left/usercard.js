@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../context/usercontext'
+import { UserContext } from '../../context/usercontext'
+import './usercard.scss'
 
 const UserCard = props => {
     const { user } = useContext(UserContext)
@@ -39,7 +40,7 @@ const UserCard = props => {
                         : 
                             <p className="font-roboto white user-card-username">{user.username}</p>
                         }               
-                        </div>
+                    </div>
                 </div>
             :
                 <></>    
@@ -48,7 +49,7 @@ const UserCard = props => {
             <div className="user-card-divider"></div>
 
             {user !== null && userRank !== undefined ?
-                <div>
+                <>
                     {/* <div className='user-card-stats'>
                         <p className='white font-roboto uc-stat'>Completed Challenges: <span className='stat'>{user.challengesComplete}</span></p>
                         <p className='white font-roboto uc-stat'>Failed Challenges: <span className='stat'>{user.challengesComplete}</span></p>
@@ -58,7 +59,7 @@ const UserCard = props => {
                         <p className='font-roboto white rank-title'>{userRank.title}</p>
                         <img className='rank-img' src={userRank.icon} alt='user rank' />
                     </div>
-                </div>
+                </>
             :
                 <></>
             }

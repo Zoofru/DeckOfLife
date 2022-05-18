@@ -4,11 +4,11 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-import LandingNav from "../components/landingnav"
-import AboutComponent from "../components/aboutcomponent"
-import Updates from "../components/updates"
+import LandingNav from "../landing/landingnav/landingnav"
+import AboutComponent from "../landing/about/aboutcomponent"
+import Updates from "../landing/news/updates"
 import { Link } from 'react-router-dom';
-import Footer from '../components/footer';
+import Footer from '../landing/footer/footer';
 
 const HomePage = () => {
     const [modalOpen, setModalOpen] = useState(false)

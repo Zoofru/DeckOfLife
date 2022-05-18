@@ -1,10 +1,11 @@
 import { useEffect, useState, useContext } from "react"
 import axios from "axios"
-import Nav from "../components/nav"
-import UserCard from "../components/usercard"
-import { UserContext } from "../context/usercontext"
+import Nav from '../left/nav'
+import UserCard from "../left/usercard"
+import { UserContext } from "../../context/usercontext"
+import './homecenter.scss'
 
-const Home = props => {
+const HomeCenterDisplay = props => {
     const [proofs, setProofs] = useState([])
     const { setUser } = useContext(UserContext)
     
@@ -63,4 +64,4 @@ const Home = props => {
     )
 }
 
-export default Home
+export default HomeCenterDisplay

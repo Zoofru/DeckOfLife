@@ -1,0 +1,75 @@
+.rank {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.rank-title {
+    margin-bottom: 5%;
+    font-size: 1.2rem;
+}
+
+.rank-img {
+    width: 20%;
+    height: fit-content;
+}
+
+.account-icon-user-card {
+    width: 25%;
+    height: 70%;
+}
+
+.account-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-card {
+    border: 1px solid white;
+    width: 65%;
+    height: 30%;
+    margin-bottom: 5%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-card-username {
+    font-size: 1.3rem;
+    width: 70%;
+}
+
+.account-username-icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+
+.account-username {
+    display: flex;
+    align-items: center;
+}
+
+.account-perm {
+    width: 20%;
+    margin: 0 5%;
+}
+
+.user-card-divider {
+    border: 1px solid rgba(255, 255, 255, .1);
+    width: 80%;
+    border-radius: 50%;
+}
+
+.uc-stat {
+    margin-top: .5%;
+}

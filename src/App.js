@@ -6,7 +6,7 @@ import HomePage from './pages/homepage';
 import './App.scss';
 import Login from './pages/login'
 import Signup from './pages/signup';
-import Home from './pages/home';
+import HomeCenterDisplay from './userhomepage/middle/homecenterdisplay';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -41,7 +41,7 @@ function App() {
               exact
               path='/'
               element={
-                !user ? <HomePage></HomePage> : <Home></Home>
+                !user ? <HomePage></HomePage> : <HomeCenterDisplay></HomeCenterDisplay>
               }
             />
 
@@ -65,7 +65,7 @@ function App() {
               exact
               path='/home'
               element={
-                <Home></Home>
+                <HomeCenterDisplay></HomeCenterDisplay>
               }
             />
 

@@ -1,0 +1,50 @@
+$neon-red: #FF3131;
+
+
+.update {
+    width: 20%;
+    margin: 5% 2% 0% 5%;
+    box-shadow: 0px 0px 10px 1px gray;
+    padding: 2% 2% 0 2%;
+    border-radius: 5px;
+}
+  
+.update-img {
+    width: 100%;
+    border-radius: 10px;
+}
+  
+.update-title {
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
+  
+.update-date {
+    color: white;
+    margin-bottom: 1%;
+}
+  
+.read-news {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+  
+.read-update-news {
+    height: 5vh;
+    width: 30%;
+    border-radius: 15px;
+    border: none;
+    background-color: $neon-red;
+    color: white;
+    font-size: .875rem;
+}
+  
+.read-update-news:hover {
+    cursor: pointer;
+    background-color: black;
+    border: 2px solid $neon-red;
+    color: $neon-red;
+}

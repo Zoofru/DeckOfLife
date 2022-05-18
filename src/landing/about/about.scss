@@ -1,0 +1,123 @@
+$neon-yellow: #FFFF33;
+$neon-red: #FF3131;
+$neon-blue: #0062FF;
+$neon-pink: #FF0099;
+$charcoal: #18191A;
+
+
+.about-title {
+    margin-top: 2vh;
+}
+  
+.hideLink {
+    text-decoration: none;
+    color: white;
+    width: 15%;
+    text-align: center;
+}
+  
+.about-sections {
+    width: 100vw;
+    display: flex;
+}
+  
+.underlay {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+}
+  
+.underlay-section {
+    width: 25%;
+    height: 100vh;
+    z-index: 1;
+    color: white;
+}
+  
+.section-club-info {
+    background-color: $neon-yellow;
+}
+  
+.section-diamond-info {
+    background-color: $neon-red;
+}
+  
+.section-spade-info {
+    background-color: $neon-blue;
+}
+  
+.section-heart-info {
+    background-color: $neon-pink;
+}
+  
+.container-club, .container-diamond, .container-spade, .container-heart {
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $charcoal;
+    z-index: 2;
+}
+  
+.info {
+    color: green;
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    margin-right: 2.5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.info-title {
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    font-size: 4em;
+}
+  
+.club-info {
+    background-color: $neon-yellow;
+    width: 25%;
+}
+  
+.spade-info {
+   background-color: $neon-blue;
+}
+  
+.diamond-info {
+    background-color: $neon-red;
+}
+  
+.heart-info {
+    background-color: $neon-pink;
+}
+  
+.card-section {
+    display: flex;
+    justify-content: center;
+    width: 25vw;
+}
+  
+.card-img-about {
+    width: 90%;
+}
+  
+.diamond {
+    width: 88%;
+}
+  
+.spade {
+    width: 87%;
+}
+  
+.info-p {
+    color: white;
+    padding:  5% 5%;
+    font-size: 1.7rem;
+    text-shadow: 0px 0px 5px black;
+    text-align: center;
+}

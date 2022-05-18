@@ -1,5 +1,6 @@
 import anime from "animejs"
 import { useEffect } from "react"
+import './about.scss'
 
 const AboutComponent = () => {
     

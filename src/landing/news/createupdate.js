@@ -1,3 +1,5 @@
+import './createupdate.scss'
+
 const createUpdate = props => {
     return(
         <div className="new-update">
