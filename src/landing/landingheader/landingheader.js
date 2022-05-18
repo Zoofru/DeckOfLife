@@ -1,16 +1,14 @@
+import LandingNav from '../landingnav/landingnav';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-import LandingNav from "../landing/landingnav/landingnav"
-import AboutComponent from "../landing/about/aboutcomponent"
-import Updates from "../landing/news/updates"
 import { Link } from 'react-router-dom';
-import Footer from '../landing/footer/footer';
+import './landingheader.scss';
 
-const HomePage = () => {
+const LandingHeader = props => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const handleModalOpen = () => setModalOpen(true)
@@ -35,11 +33,12 @@ const HomePage = () => {
     }
 
     return(
-        <div className='home'>
+        <>
             <video autoPlay muted loop id='homepage-stars'>
                 <source src="https://i.imgur.com/YV3qhf6.mp4"></source>
             </video>
             {/* credit:  https://www.pexels.com/video/stars-and-the-planet-earth-7184620/ */}
+            
             <div className="home-header">
                 <LandingNav></LandingNav>
                 <div className='home-content-container'>
@@ -57,16 +56,6 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="about-the-game" id='About'>
-                <AboutComponent></AboutComponent>
-            </div>
-            
-            <div className="updates-news" id='News'>
-                <Updates></Updates>
-            </div>
-
-            {/* MODALS */}
-
             {/* REQUEST ACCESS MODAL */}
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -77,7 +66,7 @@ const HomePage = () => {
                 BackdropComponent={Backdrop}
                 BackdropProps={{
                 timeout: 500,
-                }}
+            }}
             >
                 <Fade in={modalOpen}>
                 <Box sx={style}>
@@ -103,9 +92,8 @@ const HomePage = () => {
                 </Box>
                 </Fade>
             </Modal>
-            <Footer></Footer>
-        </div>
+        </>
     )
 }
 
-export default HomePage
+export default LandingHeader

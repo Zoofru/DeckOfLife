@@ -16,114 +16,28 @@ html {
   padding: 0;
 }
 
-.title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 65vh;
+.white {
+  color: white;
 }
 
-.game-title {
-  color: $neon-yellow;
-  display: flex;
-  flex-direction: column;
-  font-size: 8em;
-  align-items: center;
-  text-shadow: 0px 0px 5px black;
-  justify-content: center;
+.blue-neon {
+  color: $neon-blue;
 }
 
-.deck, .of {
-  padding-right: 20%;
+.red-neon, .red {
+  color: $neon-red;
 }
 
-.life {
-  padding-right: 3%;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  font-family: 'Orbitron', sans-serif;
-  width: 100vw;
-}
-
-.hidden {
-  display: none;
-}
-
-.home-header {
-  height: 100vh;
-  position: absolute;
-}
-
-.homepage-cards {
-  width: 40%;
-  height: 100%;
-}
-
-.home-content-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4% 0 2% 0;
-}
-
-
-.title-img-container {
-  height: 80%;
-  display: flex;
-  align-items: center;
-  width: 80%;
+.pink-neon {
+  color: $neon-pink;
 }
 
 .yellow-neon {
   color: $neon-yellow;
 }
 
-.home-register-btns {
-  width: 100%;
-  height: 10%;
-  padding-left: 15%;
-}
-
-.init-btns {
-  margin-right: 5%;
-  width: 10%;
-  height: 60%;
-  background-color: $neon-yellow;
-  border: none;
-  position: relative;
-  border-radius: 10px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 10%;
-}
-
-.init-btns:hover {
-  cursor: pointer;
-  background-color: black;
-  border: 1px solid $neon-yellow;
-  color: $neon-yellow;
-}
-
-.req-access:hover {
-  background-color: $neon-yellow;
-  color: --charcoal;
-}
-
-.req-access {
-  background-color: rgba(0, 0, 0, 0);
-  color: $neon-yellow;
-  border: 1px solid $neon-yellow;
-}
-
-.about-the-game {
-  height: 100vh;
+.hidden {
+  display: none;
 }
 
 .display-flex-jc-center {
@@ -147,298 +61,12 @@ html {
   margin: 5% 0;
 }
 
-.modal-desc {
-  text-align: center;
-}
-
 .small {
   font-size: small;
 }
 
-.input-email-req, .input-code-req {
-  width: 85%;
-  height: 3.5vh;
-  margin-top: 6%;
-  background-color: black;
-  color: $neon-yellow;
-  padding: 1% 3%;
-  font-size: large;
-  border: none;
-  border-bottom: 1px solid $neon-yellow;
-}
-
-.input-email-req:focus, .input-code-req:focus {
-  outline: none;
-}
-
-.init-req-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.init-req-form-btn {
-  margin-top: 5%;
-  width: 30%;
-  height: 3.5vh;
-  background-color: black;
-  border: 1px solid $neon-yellow;
-  border-radius: 5px;
-  color: $neon-yellow;
-}
-
-.init-req-form-btn:hover {
-  cursor: pointer;
-  background-color: $neon-yellow;
-  color: black;
-}
-
-.modal-desc-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-title {
-  text-align: center;
-}
-
-.login-page, .signup-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: $charcoal;
-  display: flex;
-  overflow-y: hidden;
-}
-
-.login-img {
-  width: 50%;
-}
-
-.cyberpunk-login-img {
-  width: 100%
-}
-
-.login-info {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 3%;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  align-items: center;
-}
-
-.login-title {
-  color: white;
-  margin-bottom: 5%;
-  font-size: 4rem;
-  text-align: center;
-  width: 90%;
-}
-
-.login-input {
-  border: none;
-  border-bottom: 1px solid white;
-  background-color: $charcoal;
-  width: 50%;
-  margin: 3% 0;
-  color: white;
-  height: 5vh;
-  font-size: 1.3rem;
-  padding: 0 1.5%;
-}
-
-.login-input:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, .2);
-}
-
-.login-form-submit {
-  width: 40%;
-  height: 5vh;
-  background-color: $charcoal;
-  border: 1px solid white;
-  color: white;
-  font-size: 1.2rem;
-}
-
-.login-form-submit:hover {
-  cursor: pointer;
-  background-color: white;
-  color: $charcoal;
-}
-
-.return-cont {
-  width: 100%;
-  height: 10%;
-  display: flex;
-  align-items: center;
-  color: $neon-blue;
-}
-
-.return-cont-signup {
-  width: 100%;
-  height: 7vh;
-  display: flex;
-  align-items: center;
-  color: $neon-blue;
-}
-
-.back-arrow:hover {
-  cursor: pointer;
-}
-
-.input-password {
-  margin-bottom: 0;
-}
-
-.forgot-password {
-  text-decoration: none;
-  margin: 0% 0% 3% 0%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: $neon-blue;
-  font-family: 'Roboto', sans-serif;
-}
-
-.user-actions-login {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5%;
-}
-
-.remember-me-div {
-  display: flex;
-  align-items: center;
-  width: 50%;
-}
-
-.remember-text {
-  margin-left: 5%;
-  color: $neon-blue;
-  font-family: 'Roboto', sans-serif;
-}
-
-.remember-me-checkbox:hover {
-  outline: none;
-}
-
-.blue-neon {
-  color: $neon-blue;
-}
-
-.red-neon {
-  color: $neon-red;
-}
-
-.login-img-mobile {
-  display: none;
-}
-
-.signup-img-container {
-  width: 50vw;
-}
-
-.signup-info {
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 75vh;
-  padding-bottom: 5%;
-}
-
-.signup-img {
-  width: 100%;
-}
-
 .font-roboto {
   font-family: 'Roboto', sans-serif;
-}
-
-.signup-title {
-  height: 40%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  margin-bottom: 5%;
-  color: white;
-  font-size: 4rem;
-}
-
-
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  height: 60%;
-}
-
-.signup-input {
-  border: 1px solid gray;
-  background-color: black;
-  margin-bottom: 5%;
-  padding: 1.5% 3%;
-  border-radius: 5px;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-}
-
-.input-pass {
-    margin-bottom: 0;
-}
-
-.pass-req-list {
-    padding-left: 2.5%;
-    margin-bottom: 5%;
-}
-
-.last-input {
-  margin-bottom: 0%;
-}
-
-.signup-input:focus {
-  outline: none;
-  border: 1px solid $neon-blue;
-}
-
-.tos-check {
-  color: white;
-}
-
-.signup-submit {
-  height: 8%;
-  width: 20%;
-  margin-top: 5%;
-  background-color: $neon-blue;
-  border: 1px solid $neon-blue;
-  border-radius: 7px;
-  color: white;
-  font-size: 1rem;
-}
-
-.signup-submit:hover {
-  background-color: black;
-  cursor: pointer;
-}
-
-.tos-privacy-link {
-  text-decoration: none;
-  color: $neon-blue;
 }
 
 .home-page {
@@ -446,32 +74,6 @@ html {
   height: 100vh;
   background-color: $charcoal;
   display: flex;
-}
-
-.white {
-  color: white;
-}
-
-.red {
-  color: $neon-red;
-}
-
-// mixins
-@mixin theme($theme: red) {
-    background: $theme;
-    color: white;
-}
-
-.right-signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.error-alert {
-    width: 40vw;
-    display: flex;
-    background-color: red;
 }
 
 @media only screen and (max-width: 1536px) {

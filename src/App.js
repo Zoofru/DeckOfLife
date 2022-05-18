@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { UserContext } from './context/usercontext';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import HomePage from './pages/homepage';
+import HomePage from './pages/landingpage';
 import './App.scss';
-import Login from './pages/login'
-import Signup from './pages/signup';
+import Login from './login/login'
+import Signup from './signup/signup';
 import HomeCenterDisplay from './userhomepage/middle/homecenterdisplay';
 
 function App() {

@@ -7,6 +7,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { useNavigate } from "react-router-dom";
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import axios from 'axios'
+import './login.scss'
 
 
 const Login = () => {

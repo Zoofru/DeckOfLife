@@ -1,0 +1,128 @@
+$neon-yellow: #FFFF33;
+$neon-red: #FF3131;
+$neon-blue: #0062FF;
+$neon-pink: #FF0099;
+$charcoal: #18191A;
+
+
+.signup-title {
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+    color: white;
+    font-size: 4rem;
+}
+  
+  
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 60%;
+}
+  
+.signup-input {
+    border: 1px solid gray;
+    background-color: black;
+    margin-bottom: 5%;
+    padding: 1.5% 3%;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+  
+.input-pass {
+      margin-bottom: 0;
+}
+  
+.pass-req-list {
+      padding-left: 2.5%;
+      margin-bottom: 5%;
+}
+  
+.last-input {
+    margin-bottom: 0%;
+}
+  
+.signup-input:focus {
+    outline: none;
+    border: 1px solid $neon-blue;
+}
+  
+.tos-check {
+    color: white;
+}
+  
+.signup-submit {
+    height: 8%;
+    width: 20%;
+    margin-top: 5%;
+    background-color: $neon-blue;
+    border: 1px solid $neon-blue;
+    border-radius: 7px;
+    color: white;
+    font-size: 1rem;
+}
+  
+.signup-submit:hover {
+    background-color: black;
+    cursor: pointer;
+}
+  
+.tos-privacy-link {
+    text-decoration: none;
+    color: $neon-blue;
+}
+
+.signup-img-container {
+    width: 50vw;
+}
+  
+.signup-info {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    padding-bottom: 5%;
+}
+  
+.signup-img {
+    width: 100%;
+}
+
+.return-cont-signup {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    color: $neon-blue;
+}
+
+.back-arrow:hover {
+    cursor: pointer;
+}
+
+.signup-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: $charcoal;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.right-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-alert {
+    width: 40vw;
+    display: flex;
+    background-color: red;
+}

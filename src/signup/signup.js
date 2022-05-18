@@ -11,6 +11,7 @@ import { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import React from 'react';
+import './signup.scss'
 
 const Signup = () => {
     const [verifyTOS, setVerifyTOS] = useState(true)
