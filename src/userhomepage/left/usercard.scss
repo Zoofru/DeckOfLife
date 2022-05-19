@@ -73,3 +73,9 @@
 .uc-stat {
     margin-top: .5%;
 }
+
+@media only screen and (max-width: 480px) {
+    .user-card {
+        display: none;
+    }
+}

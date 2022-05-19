@@ -5,17 +5,22 @@ import SportsEsportsRoundedIcon from '@mui/icons-material/SportsEsportsRounded';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import GavelIcon from '@mui/icons-material/Gavel';
+import { useContext } from "react";
+import { UserContext } from "../../context/usercontext";
 
 const Nav = props => {
+    const { setUser } = useContext(UserContext)
     const navigate = useNavigate()
 
     const logoutUser = () => {
         localStorage.removeItem('UAT')
         localStorage.removeItem('CUSER')
+        setUser(null)
         navigate('/')
     }
 
-    const navItems = ["Home", "Play", "Profile", "Settings", "Logout"]
+    const navItems = ["Home", "Tribunal", "Play", "Profile", "Settings", "Logout"]
     const displayNav = navItems.map((item, index) => {
         //Dont send user to a logout page, just log them out via onclick
         if(item === 'Logout') {
@@ -27,25 +32,28 @@ const Nav = props => {
             )
         } else {
             return(
-                <div className="nav-item" key={index}>
-                    {item === 'Home' ? 
-                        <HomeRoundedIcon className="icon-nav"></HomeRoundedIcon>
-                    :
-                        item === 'Play' ?
-                            <SportsEsportsRoundedIcon className='icon-nav'></SportsEsportsRoundedIcon>
+                <Link to={`/${item}`} className='hideLink nav-item'  key={index}>
+                    <div className="nav-item">
+                        {item === 'Home' ? 
+                            <HomeRoundedIcon className="icon-nav"></HomeRoundedIcon>
                         :
-                            item === 'Profile' ?
-                                <PersonRoundedIcon className='icon-nav'></PersonRoundedIcon>
+                            item === 'Tribunal' ?
+                                <GavelIcon className="icon-nav"></GavelIcon>
                             :
-                                item === 'Settings' ?
-                                    <SettingsIcon className="icon-nav"></SettingsIcon>
+                                item === 'Play' ?
+                                    <SportsEsportsRoundedIcon className='icon-nav'></SportsEsportsRoundedIcon>
                                 :
-                                <></>
-                    }
-                    <Link to={`/${item}`} className='hideLink'>
-                        <h5 className="nav-item-text white font-roboto">{item}</h5>
-                    </Link>
-                </div>
+                                    item === 'Profile' ?
+                                        <PersonRoundedIcon className='icon-nav'></PersonRoundedIcon>
+                                    :
+                                        item === 'Settings' ?
+                                            <SettingsIcon className="icon-nav"></SettingsIcon>
+                                        :
+                                        <></>
+                        }
+                            <h5 className="nav-item-text white font-roboto">{item}</h5>
+                    </div>
+                </Link>
             )
         }
     })

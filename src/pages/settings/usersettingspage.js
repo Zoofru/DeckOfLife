@@ -1,3 +1,5 @@
+import './usersettingspage.scss'
+
 const UserSettingsPage = props => {
     return(
         <div className="settings-page">

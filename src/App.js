@@ -2,11 +2,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { UserContext } from './context/usercontext';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
-import HomePage from './pages/landingpage';
+import HomePage from './landing/landingpage';
 import './App.scss';
-import Login from './login/login'
-import Signup from './signup/signup';
+import Login from './pages/login/login'
+import Signup from './pages/signup/signup';
 import HomeCenterDisplay from './userhomepage/middle/homecenterdisplay';
+import Tribunal from './pages/tribunal/tribunal'
+import Profile from './pages/profile/profile'
+import UserSettingsPage from './pages/settings/usersettingspage'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -66,6 +69,30 @@ function App() {
               path='/home'
               element={
                 <HomeCenterDisplay></HomeCenterDisplay>
+              }
+            />
+
+            <Route
+              exact
+              path='/tribunal'
+              element={
+                <Tribunal></Tribunal>
+              }
+            />
+
+            <Route
+              exact
+              path='/profile'
+              element={
+                <Profile></Profile>
+              }
+            />
+
+            <Route
+              exact
+              path='/Settings'
+              element={
+                <UserSettingsPage></UserSettingsPage>
               }
             />
 

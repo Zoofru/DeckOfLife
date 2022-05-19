@@ -16,7 +16,6 @@ const UserCard = props => {
                     }
                 })
                 setUserRank(res.data.rank)
-                console.log(userRank)
             }
         }
 

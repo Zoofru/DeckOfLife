@@ -64,3 +64,37 @@ $charcoal: #18191A;
     align-items: flex-end;
     padding-top: 5%;
 }
+
+.mobile-icons {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .nav-item-text {
+        display: none;
+    }
+
+    .icon-nav {
+        position: relative;
+        margin: 0;
+        width: fit-content !important;
+    }
+
+    .nav {
+        justify-content: flex-start;
+        height: 100%;
+    }
+
+    .navbar {
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0;
+        height: 90%;
+    }
+
+    .mobile-icons {
+        display: block;
+    }
+
+}

@@ -1,3 +1,5 @@
+import './profile.scss'
+
 const Profile = props => {
     return(
         <div className="profile">
