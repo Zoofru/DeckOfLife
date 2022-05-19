@@ -1,12 +1,3 @@
-.center-home {
-    width: 60%;
-    // height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5% 0 0 0;
-}
-  
 .tribunal-title {
     width: 90%;
     text-align: left;
@@ -14,11 +5,16 @@
   
 .tribunal {
     border: 1px solid white;
-    width: 90%;
-    height: 25%;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
     display: flex;
     align-items: center;
+}
+
+.tribunal-container {
+    width: 90%;
+    height: 100%;
 }
   
 .tribunal-ph {
@@ -32,6 +28,11 @@
     width: 13%;
     height: 100%;
     border-right: 3px solid black;
+}
+
+.left-side-home {
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (max-width: 480px) {

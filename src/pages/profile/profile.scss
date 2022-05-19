@@ -5,4 +5,15 @@ $charcoal: #18191A;
     height: 100vh;
     width: 100vw;
     background-color: $charcoal;
+    display: flex;
+}
+
+.left {
+    height: 100%;
+    width: 25%;
+}
+
+.center {
+    width: 75%;
+    height: 100%;
 }

@@ -1,10 +1,11 @@
+$neon-red: #FF3131;
 $charcoal: #18191A;
 
 .nav {
     height: 50%;
     width: 20vw;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
   
@@ -17,6 +18,7 @@ $charcoal: #18191A;
     height: 100%;
     border-radius: 10px;
     justify-content: center;
+    margin-top: 10%;
 }
   
 
@@ -33,7 +35,7 @@ $charcoal: #18191A;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     &:hover {
         cursor: pointer;
         background-color: white;
@@ -46,6 +48,20 @@ $charcoal: #18191A;
             color: $charcoal;
         }
     }
+}
+
+.item-tab:hover {
+    border-left: 5px solid $neon-red;
+}
+
+.last-tab {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.first-tab {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .nav-item-text {

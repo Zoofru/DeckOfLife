@@ -6,7 +6,7 @@ import HomePage from './landing/landingpage';
 import './App.scss';
 import Login from './pages/login/login'
 import Signup from './pages/signup/signup';
-import HomeCenterDisplay from './userhomepage/middle/homecenterdisplay';
+import DisplayUserHome from './userhomepage/displayuserhome'
 import Tribunal from './pages/tribunal/tribunal'
 import Profile from './pages/profile/profile'
 import UserSettingsPage from './pages/settings/usersettingspage'
@@ -44,7 +44,7 @@ function App() {
               exact
               path='/'
               element={
-                !user ? <HomePage></HomePage> : <HomeCenterDisplay></HomeCenterDisplay>
+                !user ? <HomePage></HomePage> : <DisplayUserHome></DisplayUserHome>
               }
             />
 
@@ -68,7 +68,7 @@ function App() {
               exact
               path='/home'
               element={
-                <HomeCenterDisplay></HomeCenterDisplay>
+                <DisplayUserHome></DisplayUserHome>
               }
             />
 

@@ -25,19 +25,25 @@ const Nav = props => {
         //Dont send user to a logout page, just log them out via onclick
         if(item === 'Logout') {
             return(
-                <div className="nav-item" key={index} onClick={logoutUser}>
+                <div className="nav-item item-tab last-tab" key={index} onClick={logoutUser}>
                     <LogoutIcon className="icon-nav"></LogoutIcon>
                     <h6 className="nav-item-text white font-roboto">{item}</h6>
                 </div>
             )
+        } else if(item === 'Home') {
+            return(
+                <Link to={`/${item}`} className='hideLink nav-item item-tab first-tab'  key={index}>
+                    <div className="nav-item">
+                        <HomeRoundedIcon className="icon-nav"></HomeRoundedIcon>
+                        <h5 className="nav-item-text white font-roboto">{item}</h5>
+                    </div>
+                </Link>
+            )
         } else {
             return(
-                <Link to={`/${item}`} className='hideLink nav-item'  key={index}>
+                <Link to={`/${item}`} className='hideLink nav-item item-tab'  key={index}>
                     <div className="nav-item">
-                        {item === 'Home' ? 
-                            <HomeRoundedIcon className="icon-nav"></HomeRoundedIcon>
-                        :
-                            item === 'Tribunal' ?
+                        {item === 'Tribunal' ?
                                 <GavelIcon className="icon-nav"></GavelIcon>
                             :
                                 item === 'Play' ?
