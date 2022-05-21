@@ -28,7 +28,7 @@ const DisplayUserHome = () => {
             refreshUser()
         }
         
-    }, [])
+    }, [setUser])
 
     return(
         <div className="home-page">
