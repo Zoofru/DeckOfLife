@@ -19,7 +19,6 @@ const DisplayUserHome = () => {
                         'Authorization' : `${localStorage.getItem('UAT')}`
                     }
                 })
-                console.log(res)
                 setUser(res.data.user)
             }
         }
@@ -27,6 +26,7 @@ const DisplayUserHome = () => {
         if(localStorage.getItem('UAT')) {
             refreshUser()
         }
+
         
     }, [setUser])
 
