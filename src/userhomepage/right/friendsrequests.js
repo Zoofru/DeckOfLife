@@ -26,9 +26,7 @@ const FriendsRequests = props => {
         })
 
         //When request is declined remove the request from friend req array
-        //then set array = to itself just to get the component to re render
         friendRequests.splice(index, 1)
-        setFriendRequests({friendRequests})
     }
 
     //only attempt to loop through friend requests if it has content.
