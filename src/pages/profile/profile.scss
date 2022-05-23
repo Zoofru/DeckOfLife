@@ -6,11 +6,7 @@ $charcoal: #18191A;
     width: 100vw;
     background-color: $charcoal;
     display: flex;
-}
-
-.left {
-    height: 100%;
-    width: 20%;
+    justify-content: center;
 }
 
 .center {
@@ -25,7 +21,7 @@ $charcoal: #18191A;
     width: 80%;
     display: flex;
     background-color: rgba($color: white, $alpha: .4);
-    height: 30vh;
+    height: 20vh;
 }
 
 .banner {
@@ -89,12 +85,12 @@ $charcoal: #18191A;
     height: 100%;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 40%;
+    margin-bottom: 10%;
     justify-content: center;
 }
 
 .stats {
-    font-size: xx-large;
+    font-size: x-large;
     height: 100%;
     display: flex;
     justify-content: center;

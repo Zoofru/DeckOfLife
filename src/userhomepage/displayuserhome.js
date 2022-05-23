@@ -35,8 +35,8 @@ const DisplayUserHome = () => {
     return(
         <div className="home-page">
             <div className="left-side-home">
-                <UserCard></UserCard>
                 <Nav></Nav>
+                <UserCard></UserCard>
             </div>
 
             <div className="center-home">
