@@ -37,6 +37,7 @@ $charcoal: #18191A;
     align-items: center;
     margin-top: 3%;
     height: 70%;
+    width: 100%;
 }
 
 .profile-img-editor {
@@ -76,8 +77,8 @@ $charcoal: #18191A;
 }
 
 .media-btn {
-    width: 8%;
-    height: 50%;
+    width: 10%;
+    height: 65%;
     border-radius: 0px;
     display: flex;
     justify-content: center;
@@ -99,7 +100,7 @@ $charcoal: #18191A;
 
 .media-icon {
     background-color: transparent;
-    font-size: x-large !important;
+    font-size: xx-large !important;
     color: $neon-blue;
 }
 

@@ -45,52 +45,54 @@ const Profile = props => {
 
     return(
         <div className="profile">
-            <div className='left'>
-                <ProfileBar></ProfileBar>
-            </div>
+            { user ? 
+                <>
+                    <div className='left'>
+                        <ProfileBar></ProfileBar>
+                    </div>
 
-            <div className='center'>
-                <div className='user-info'>
-                    <div className='acc-icon-and-rank'>
-                        { user ? 
-                            <>
+                    <div className='center'>
+                        <div className='banner'>
+                            <img className='profile-banner' src={user.profileBanner} alt='banner'/>
+                        </div>
+                        <div className='user-info'>
+                            <div className='rank-container'>
+                                <div className='rank-profile-container'>
+                                    <img className='profile-rank' src={userRank.icon} alt='rank'/>
+                                </div>
+                            </div>
+
+                            <div className='acc-icon-and-rank'>
                                 <div className='img'>
                                     <img className='profile-image-profile' src={user.accountIcon} alt='profile' /> 
                                 </div>
 
-                                <div className='rank'>
-                                    <img className='profile-rank' src={userRank.icon} alt='rank'/>
+                                <div className='username-container'>
+                                    <Username 
+                                        className='username mobile' 
+                                        username={user.username}
+                                        color='black'
+                                        iconWidth='25%'
+                                        fontSize='xxx-large'
+                                    ></Username>
                                 </div>
-                            </>
-                        : 
-                            <></>
-                        }
-                    </div>
 
-                    <div className='info-container'>
-                        {user ? 
-                            <>
-                                <Username 
-                                    className='username' 
-                                    username={user.username}
-                                    iconWidth='15%'
-                                    fontSize='x-large'
-                                ></Username>
+                            </div>
 
-                                <div className='stats'>
-                                    <p className='font-roboto white'>Challenges Completed: {user.challengesComplete}</p>
-                                    <p className='font-roboto white'>Challenges Skipped: {user.challengesSkipped}</p>
-                                    <p className='font-roboto white'>Challenges Failed: {user.challengesFailed}</p>
-                                </div>
-                            </>
-                        :
-                            <></>
-                        }
+                            <div className='stats'>
+                                <p className='font-roboto'>Challenges Completed: {user.challengesComplete}</p>
+                                <p className='font-roboto'>Challenges Skipped: {user.challengesSkipped}</p>
+                                <p className='font-roboto'>Challenges Failed: {user.challengesFailed}</p>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-            </div>
+                </>
+                :
+                <></>
+            }
         </div>
-    )
-}
+        )
+    }
 
 export default Profile

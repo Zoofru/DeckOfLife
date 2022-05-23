@@ -37,7 +37,7 @@ const FriendsRequests = props => {
             return(
                 <div className='individual-friend-req' key={index}>
                     <div className='friend-req-info'>
-                        <img className='friend-req-img' src={friendReq.requestinguserAccountIcon} alt='profile pic' />
+                        <img className='friend-req-img' src={friendReq.requestingUserAccountIcon} alt='profile pic' />
                         <p className='white font-roboto'>{friendReq.requestingUserUsername}</p>
                     </div>
     

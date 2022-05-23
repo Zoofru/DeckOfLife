@@ -19,7 +19,11 @@ const TextEditor = props => {
     return(
         <div className="text-editor">
             <div className='upper'>
-                <img className='profile-img-editor' src={user.accountIcon} alt='proflie icon'/>
+                {user ? 
+                    <img className='profile-img-editor' src={user.accountIcon} alt='proflie icon'/>
+                :
+                    <></>
+                }
                 <textarea 
                     className='text-field font-roboto'
                     placeholder='Got Something to Say?'

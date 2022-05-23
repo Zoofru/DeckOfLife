@@ -10,7 +10,8 @@ const Username = props => {
             width: props.iconWidth
         },
         usernameStyle: {
-            fontSize: props.fontSize
+            fontSize: props.fontSize,
+            color: props.color
         }
     }
 
