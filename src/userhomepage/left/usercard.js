@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../context/usercontext'
+import Username from '../../components/username'
 import './usercard.scss'
 
 const UserCard = props => {
@@ -33,8 +34,11 @@ const UserCard = props => {
                     <div className="account-username">
                         {user.isStaff ? 
                             <>
-                                <img className='account-perm' src='https://i.imgur.com/6P1CHsh.png' alt='account-rank'/>
-                                <p className="font-roboto white user-card-username red">{user.username}</p>
+                                <Username 
+                                    username={user.username}
+                                    iconWidth='20%'
+                                    fontSize='large'
+                                ></Username>
                             </>
                         : 
                             <p className="font-roboto white user-card-username">{user.username}</p>

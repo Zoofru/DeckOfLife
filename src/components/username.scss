@@ -1,0 +1,16 @@
+.username-comp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perm-icon {
+    width: 15%;
+    margin-right: 1.5%;
+}
+
+@media only screen and (max-width: 480px) {
+    .perm-icon {
+        width: 5%;
+    }
+}

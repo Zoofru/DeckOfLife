@@ -57,7 +57,7 @@ const Login = () => {
 
     return(
         <div className="login-page">
-
+            <title>Login</title>
             <div className="login-img-mobile">
                 <img className="mobile-img" src="https://i.imgur.com/KqtiLvZ.png" alt="suits" />
             </div>

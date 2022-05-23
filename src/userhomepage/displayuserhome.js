@@ -6,6 +6,7 @@ import UserCard from "./left/usercard"
 import Tribunal from './middle/tribunal'
 import FriendsRequests from "./right/friendsrequests"
 import Leaderboard from "./right/leaderboard"
+import TextEditor from "./middle/texteditor"
 import './displayuserhome.scss'
 
 const DisplayUserHome = () => {
@@ -41,6 +42,7 @@ const DisplayUserHome = () => {
                 <div className="tribunal-center">
                     <Tribunal></Tribunal>
                 </div>
+                <TextEditor></TextEditor>
             </div>
 
             <div className="right-home">

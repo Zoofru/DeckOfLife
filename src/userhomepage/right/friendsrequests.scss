@@ -60,3 +60,9 @@ $neon-blue: #0062FF;
         border-bottom: 2px solid darkgreen;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .friends-req {
+        display: none;
+    }
+}

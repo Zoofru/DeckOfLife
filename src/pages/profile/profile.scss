@@ -10,10 +10,71 @@ $charcoal: #18191A;
 
 .left {
     height: 100%;
-    width: 25%;
+    width: 20%;
 }
 
 .center {
     width: 75%;
     height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+    .img {
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-image-profile {
+        width: 90%;
+        border-radius: 5px;
+    }
+
+    .user-info {
+        margin-top: 5vh;
+        border: 2px solid gray;
+        height: 20vh;
+        display: flex;
+    }
+
+    .acc-icon-and-rank {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+    }
+
+    .info-contianer {
+        width: 70%;
+    }
+
+    .rank {
+        height: 50%;
+    }
+
+    .profile-rank {
+        width: 25%;
+    }
+
+    .rank-title {
+        font-size: medium;
+    }
+
+    .username {
+        font-size: xx-large;
+    }
+    .info-container {
+        width: 70%;
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats {
+        margin-top: 15%;
+    }
 }
