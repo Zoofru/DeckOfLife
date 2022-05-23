@@ -6,6 +6,7 @@ import UserCard from "./left/usercard"
 import Tribunal from './middle/tribunal'
 import FriendsRequests from "./right/friendsrequests"
 import Leaderboard from "./right/leaderboard"
+import TextEditor from "./middle/texteditor"
 import './displayuserhome.scss'
 
 const DisplayUserHome = () => {
@@ -13,6 +14,7 @@ const DisplayUserHome = () => {
     
     useEffect(() => {
         const refreshUser = async () => {
+            console.log('gg')
             if(localStorage.getItem('UAT')) {
                 const res = await axios.get(`${process.env.REACT_APP_API}/retrieve`, {
                     headers: {
@@ -33,14 +35,15 @@ const DisplayUserHome = () => {
     return(
         <div className="home-page">
             <div className="left-side-home">
-                <UserCard></UserCard>
                 <Nav></Nav>
+                <UserCard></UserCard>
             </div>
 
             <div className="center-home">
                 <div className="tribunal-center">
                     <Tribunal></Tribunal>
                 </div>
+                <TextEditor></TextEditor>
             </div>
 
             <div className="right-home">

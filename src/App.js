@@ -13,7 +13,7 @@ import UserSettingsPage from './pages/settings/usersettingspage'
 
 function App() {
   const [user, setUser] = useState(null)
-    
+  
   useEffect(() => {
     //If user refreshes page, make a call to set user context again
     const refreshUser = async () => {

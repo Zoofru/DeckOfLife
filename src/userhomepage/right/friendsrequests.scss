@@ -7,7 +7,6 @@ $neon-blue: #0062FF;
 
 
 .friends-req-container {
-    // border: 1px solid white;
     min-height: 25vh;
 }
 
@@ -58,5 +57,11 @@ $neon-blue: #0062FF;
 
     &:hover {
         border-bottom: 2px solid darkgreen;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .friends-req {
+        display: none;
     }
 }
