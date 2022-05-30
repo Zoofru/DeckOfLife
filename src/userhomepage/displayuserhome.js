@@ -14,7 +14,6 @@ const DisplayUserHome = () => {
     
     useEffect(() => {
         const refreshUser = async () => {
-            console.log('gg')
             if(localStorage.getItem('UAT')) {
                 const res = await axios.get(`${process.env.REACT_APP_API}/retrieve`, {
                     headers: {
