@@ -41,7 +41,7 @@ const Profile = props => {
         }
 
         getRank()
-    }, [])
+    }, [setUser, user])
 
     return(
         <div className="profile">
@@ -79,10 +79,8 @@ const Profile = props => {
 
                             </div>
 
-                            <div className='stats'>
-                                <p className='font-roboto'>Challenges Completed: {user.challengesComplete}</p>
-                                <p className='font-roboto'>Challenges Skipped: {user.challengesSkipped}</p>
-                                <p className='font-roboto'>Challenges Failed: {user.challengesFailed}</p>
+                            <div className='bio'>
+                                <p className='font-roboto'>{user.profileBio}</p>
                             </div>
 
                         </div>
