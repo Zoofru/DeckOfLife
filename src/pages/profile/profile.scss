@@ -1,10 +1,10 @@
 $charcoal: #18191A;
+$neon-blue: #0062FF;
 
 
 .profile {
     height: 100vh;
     width: 100vw;
-    background-color: $charcoal;
     display: flex;
     justify-content: center;
 }
@@ -15,15 +15,18 @@ $charcoal: #18191A;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid white;
     border-bottom: none;
 }
 
 .user-info {
     width: 100%;
     display: flex;
-    background-color: rgba($color: white, $alpha: .4);
+    background-color: rgba($color: white, $alpha: 1);
     height: 20vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid $neon-blue;
+    border-top: none;
 }
 
 .banner {
